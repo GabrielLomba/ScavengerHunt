@@ -1,22 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
-    },
-    {
         "merged": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
         "source": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
     },
     {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
-    },
-    {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
     }
 ]

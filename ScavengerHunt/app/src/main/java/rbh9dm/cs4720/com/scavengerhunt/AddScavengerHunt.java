@@ -45,6 +45,15 @@ public class AddScavengerHunt extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
+                /** Don't add if the name is not unique **/
+                else if(Tab1.myDB.exists(name)){
+                    Context context = getApplicationContext();
+                    CharSequence text = "Names of the Scavenger Hunts must be unique";
+                    int duration = Toast.LENGTH_LONG;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
                 /*** Add otherwise ***/
                 else {
                     Tab1.myDB.insertHunt(name, false);

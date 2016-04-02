@@ -16,7 +16,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -82,16 +85,40 @@ public class HuntItems extends AppCompatActivity {
                 if (itemList.size() > 0) {
                     Intent intent = getIntent();
                     int pos = intent.getIntExtra(Tab1.ID, 0);
-                    Firebase myFirebaseRef = new Firebase("https://cs4720scavhunt.firebaseio.com/");
-                    Firebase thisHunt = myFirebaseRef.child("hunts").child(Tab1.huntList.get(pos).getName());
-                    thisHunt.setValue(itemList);
+                    Firebase myFirebaseRef = new Firebase("https://cs4720scavhunt.firebaseio.com/hunts");
+                    final String name = Tab1.huntList.get(pos).getName();
+                    /*** Check if there is already a hunt with this name ***/
+                    myFirebaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            /*** Don't share if a hunt with that name already exists ***/
+                            if (dataSnapshot.child(name).exists()) {
+                                Context context = getApplicationContext();
+                                CharSequence text = "A hunt with that name already exists. Please rename before adding.";
+                                int duration = Toast.LENGTH_SHORT;
 
-                    Context context = getApplicationContext();
-                    CharSequence text = "Scavenger Hunt added!";
-                    int duration = Toast.LENGTH_SHORT;
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
+                            /*** If everything is okay, go ahead and share ***/
+                            else {
+                                Firebase thisHunt = dataSnapshot.getRef().child(name);
+                                thisHunt.setValue(itemList);
 
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                                Context context = getApplicationContext();
+                                CharSequence text = "Scavenger Hunt added!";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(FirebaseError firebaseError) {
+
+                        }
+                    });
                 }
                 /*** Otherwise do not share ***/
                 else {

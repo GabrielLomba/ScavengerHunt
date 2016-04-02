@@ -42,10 +42,19 @@ public class Add_Hunt_Item extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
+                /** Don't add if the name is not unique **/
+                else if(Tab1.myHuntDB.exists(getIntent().getStringExtra("name"),name)){
+                    Context context = getApplicationContext();
+                    CharSequence text = "Names of the Tasks must be unique";
+                    int duration = Toast.LENGTH_LONG;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
                 /*** Add otherwise ***/
                 else {
                     EditText descField = (EditText) findViewById(R.id.description);
-                    String desc = "" + descField.getText();
+                    String desc = descField.getText().toString();
                     CheckBox picReqField = (CheckBox) findViewById(R.id.picReq);
                     boolean picReq = picReqField.isChecked();
                     CheckBox locReqField = (CheckBox) findViewById(R.id.locReq);

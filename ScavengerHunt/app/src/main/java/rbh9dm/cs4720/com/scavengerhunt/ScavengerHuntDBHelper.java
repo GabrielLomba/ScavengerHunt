@@ -75,6 +75,16 @@ public class ScavengerHuntDBHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean exists (String name)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from hunts where name = ? ", new String[] { name } );
+        res.moveToFirst();
+        if(res.isAfterLast() == false)
+                return true;
+        return false;
+    }
+
     public Integer deleteHunt (String name)
     {
         SQLiteDatabase db = this.getWritableDatabase();

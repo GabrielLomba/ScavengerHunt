@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
@@ -16,11 +16,7 @@
         "source": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     }
 ]

@@ -6,5 +6,4 @@
     <string name="title_activity_add__hunt__item">Add_Hunt_Item</string>
     <string name="title_activity_more_info">More_info</string>
     <string name="title_activity_web_hunt_items">WebHuntItems</string>
-    <string name="title_activity_hunt_download">huntDownload</string>
 </resources>

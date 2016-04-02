@@ -93,23 +93,13 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
                 new String[] { nameOfHunt });
     }
 
-    public boolean exists (String nameOfHunt, String name)
-    {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from items where nameOfHunt= ? and name = ?", new String[] { nameOfHunt, name });
-        res.moveToFirst();
-        if(res.isAfterLast() == false)
-                return true;
-        return false;
-    }
-
     public ArrayList<LineItem> getAllItems(String nameOfHunt)
     {
         ArrayList<LineItem> array_list = new ArrayList<LineItem>();
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from items where nameOfHunt= ? ", new String[] { nameOfHunt } );
+        Cursor res =  db.rawQuery( "select * from items where nameOfHunt=\'"+nameOfHunt+"\'", null );
         res.moveToFirst();
 
         while(res.isAfterLast() == false){

@@ -42,7 +42,7 @@ public class HuntItems extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
         int pos = intent.getIntExtra(Tab1.ID, 0);
-        getSupportActionBar().setTitle(Tab1.huntList.get(pos).getName());
+        //getSupportActionBar().setTitle(Tab1.huntList.get(pos).getName());
 
         /*** Load items ***/
         itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos).getName());

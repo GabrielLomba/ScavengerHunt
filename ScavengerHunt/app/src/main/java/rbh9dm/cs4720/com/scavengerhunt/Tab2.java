@@ -22,6 +22,7 @@ public class Tab2 extends Fragment {
     public static ArrayList<String> huntList = new ArrayList<>();
     public static ArrayAdapter<String> huntsAdapter;
     public static final String TITLE = "title";
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tab_2,container,false);
@@ -65,8 +66,8 @@ public class Tab2 extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getActivity(), AddScavengerHunt.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getActivity(), AddScavengerHunt.class);
+                //startActivity(intent);
             }
         });
 

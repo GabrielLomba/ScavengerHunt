@@ -34,20 +34,20 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Picture Required"
-        android:id="@+id/picReq"
+        android:text="Location Required"
+        android:id="@+id/locReq"
+        android:checked="false"
         android:layout_below="@+id/description"
-        android:layout_alignStart="@+id/description"
-        android:checked="false" />
+        android:layout_alignParentStart="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location Required"
-        android:id="@+id/locReq"
-        android:layout_below="@+id/picReq"
-        android:layout_alignStart="@+id/picReq"
-        android:checked="false" />
+        android:text="Picture Required"
+        android:id="@+id/picReq"
+        android:checked="false"
+        android:layout_below="@+id/locReq"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

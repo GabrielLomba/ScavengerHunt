@@ -10,15 +10,21 @@ public class LineItem {
     private boolean locationRequired;
     private boolean pictureOk;
     private boolean locationOk;
+    private String nameOfLocation;
+    private float latitude;
+    private float longitude;
 
-    public LineItem(String name, String description, boolean pictureRequired, boolean locationRequired) {
+    public LineItem(String name, String description, boolean pictureRequired, boolean locationRequired, String nameOfLocation, float latitude, float longitude) {
         this.name = name;
         this.description = description;
         this.pictureRequired = pictureRequired;
         this.locationRequired= locationRequired;
+        this.nameOfLocation = nameOfLocation;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
-    public LineItem(String name, String description, int pictureRequired, int locationRequired) {
+    public LineItem(String name, String description, int pictureRequired, int locationRequired, String nameOfLocation, float latitude, float longitude) {
         this.name = name;
         this.description = description;
         if(pictureRequired == 0)
@@ -29,6 +35,9 @@ public class LineItem {
             this.locationRequired = false;
         else
             this.locationRequired = true;
+        this.nameOfLocation = nameOfLocation;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName() {
@@ -75,6 +84,30 @@ public class LineItem {
         this.pictureOk = pictureOk;
     }
 
+    public String getNameOfLocation() {
+        return nameOfLocation;
+    }
+
+    public void setNameOfLocation(String nameOfLocation) {
+        this.nameOfLocation = nameOfLocation;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
     public boolean isLocationOk() {
         return locationOk;
     }
@@ -82,4 +115,6 @@ public class LineItem {
     public void setLocationOk(boolean locationOk) {
         this.locationOk = locationOk;
     }
+
+
 }

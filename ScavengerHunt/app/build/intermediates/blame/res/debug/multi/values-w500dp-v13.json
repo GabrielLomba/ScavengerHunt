@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "outputFile": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,31 +11,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 232,
-                        "endColumn": 54,
-                        "endOffset": 282
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 54,
-                    "endOffset": 105
-                },
-                "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
+                    "file": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -72,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -83,7 +59,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -96,7 +72,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -107,7 +83,31 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\AndroidStudioProjects\\UVABucketList-master-master(test)\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 232,
+                        "endColumn": 54,
+                        "endOffset": 282
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -135,16 +135,16 @@
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 232,
+                        "startOffset": 236,
                         "endColumn": 54,
-                        "endOffset": 282
+                        "endOffset": 286
                     }
                 }
             }
         ]
     },
     {
-        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-w500dp-v13\\values-w500dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -155,7 +155,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-w500dp\\values-w500dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

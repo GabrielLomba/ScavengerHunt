@@ -46,7 +46,7 @@ public class HuntItems extends AppCompatActivity {
 
         /*** Load items ***/
         itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos).getName());
-        Log.i("look look look", "This is the length of me list: " + itemList.size());
+        //Log.i("look look look", "This is the length of me list: " + itemList.size());
 
         ListView listView = (ListView)findViewById(R.id.listview2);
         itemAdapter = new ArrayAdapter<LineItem>(this, android.R.layout.simple_list_item_1, itemList);

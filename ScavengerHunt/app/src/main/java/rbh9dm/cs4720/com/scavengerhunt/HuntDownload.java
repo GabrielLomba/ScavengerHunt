@@ -54,25 +54,40 @@ public class HuntDownload extends AppCompatActivity {
                 for (DataSnapshot child : snapshot.getChildren()) {
                     /*** Get the right scavenger hunt ***/
                     if (child.getKey().equals(selected)) {
-                        Object picReq = true, locReq = true;
-                        String name = "", description = "";
+                        Object picReq = true, locReq = true, latitude = 0, longitude = 0;
+                        String name = "", description = "", nameOfLocation = "";
                         Map<String, String> read;
 
                         /*** Read the tasks from Firebase***/
                         for (DataSnapshot task : child.getChildren()) {
                             read = (Map<String, String>) task.getValue();
                             for (Map.Entry<String, String> entry : read.entrySet()) {
-                                if (entry.getKey().equals("name"))
-                                    name = entry.getValue().toString();
-                                else if (entry.getKey().equals("description"))
-                                    description = entry.getValue().toString();
-                                else if (entry.getKey().equals("pictureRequired"))
-                                    picReq = entry.getValue();
-                                else if (entry.getKey().equals("locationRequired"))
-                                    locReq = entry.getValue();
+                                switch (entry.getKey()){
+                                    case "name":
+                                        name = entry.getValue().toString();
+                                        break;
+                                    case "description":
+                                        description = entry.getValue().toString();
+                                        break;
+                                    case "pictureRequired":
+                                        picReq = entry.getValue();
+                                        break;
+                                    case "locationRequired":
+                                        locReq = entry.getValue();
+                                        break;
+                                    case "nameOfLocation":
+                                        nameOfLocation = entry.getValue();
+                                        break;
+                                    case "latitude":
+                                        latitude = entry.getValue();
+                                        break;
+                                    case "longitude":
+                                        longitude = entry.getValue();
+                                        break;
+                                }
                             }
 
-                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq));
+                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, nameOfLocation, (float)latitude, (float)longitude));
                         }
                     }
                 }
@@ -104,14 +119,14 @@ public class HuntDownload extends AppCompatActivity {
                     selected += "(" + i + ")";
                 }
                 for (LineItem task : itemList) {
-                    Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired());
+                    Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired(), task.getNameOfLocation(), task.getLatitude(), task.getLongitude());
                 }
                 Tab1.myDB.insertHunt(selected, false);
                 Tab1.huntList.add(new ScavengerHunt(selected));
                 Tab1.huntsAdapter.notifyDataSetChanged();
 
                 Context context = getApplicationContext();
-                CharSequence text = "Scavenger Hunt "+selected+" downloaded!";
+                CharSequence text = "Scavenger Hunt " + selected + " downloaded!";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);

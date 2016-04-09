@@ -25,6 +25,9 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
     public static final String ITEMS_COLUMN_DESCRIPTION = "description";
     public static final String ITEMS_COLUMN_PICREQ = "picReq";
     public static final String ITEMS_COLUMN_LOCREQ = "locReq";
+    public static final String ITEMS_COLUMN_NAMEOFLOCATION = "nameOfLoc";
+    public static final String ITEMS_COLUMN_LATITUDE = "latitude";
+    public static final String ITEMS_COLUMN_LONGITUDE = "longitude";
     private HashMap hp;
 
     public HuntItemDBHelper(Context context)
@@ -37,7 +40,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         db.execSQL(
                 "create table items " +
-                        "(nameOfHunt text, name text, description text, picReq integer, locReq integer)"
+                        "(nameOfHunt text, name text, description text, picReq integer, locReq integer, nameOfLoc text, latitude float, longitude float)"
         );
     }
 
@@ -48,7 +51,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertHunt  (String nameOfHunt, String name, String description, boolean picReq, boolean locReq)
+    public boolean insertHunt  (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, String nameOfLocation, float latitude, float longitude)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -57,6 +60,9 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_DESCRIPTION, description);
         contentValues.put(ITEMS_COLUMN_PICREQ, picReq);
         contentValues.put(ITEMS_COLUMN_LOCREQ, locReq);
+        contentValues.put(ITEMS_COLUMN_NAMEOFLOCATION, nameOfLocation);
+        contentValues.put(ITEMS_COLUMN_LATITUDE, latitude);
+        contentValues.put(ITEMS_COLUMN_LONGITUDE, longitude);
         db.insert(ITEMS_TABLE_NAME, null, contentValues);
         return true;
     }
@@ -73,7 +79,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateHunt (String nameOfHunt, String name, String description, boolean picReq, boolean locReq)
+    public boolean updateHunt (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, String nameOfLocation, float latitude, float longitude)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -81,6 +87,9 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_DESCRIPTION, description);
         contentValues.put(ITEMS_COLUMN_PICREQ, picReq);
         contentValues.put(ITEMS_COLUMN_LOCREQ, locReq);
+        contentValues.put(ITEMS_COLUMN_NAMEOFLOCATION, nameOfLocation);
+        contentValues.put(ITEMS_COLUMN_LATITUDE, latitude);
+        contentValues.put(ITEMS_COLUMN_LONGITUDE, longitude);
         db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { nameOfHunt } );
         return true;
     }
@@ -113,7 +122,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         res.moveToFirst();
 
         while(res.isAfterLast() == false){
-            array_list.add(new LineItem(res.getString(res.getColumnIndex(ITEMS_COLUMN_NAME)), res.getString(res.getColumnIndex(ITEMS_COLUMN_DESCRIPTION)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_PICREQ)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_LOCREQ))));
+            array_list.add(new LineItem(res.getString(res.getColumnIndex(ITEMS_COLUMN_NAME)), res.getString(res.getColumnIndex(ITEMS_COLUMN_DESCRIPTION)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_PICREQ)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_LOCREQ)), res.getString(res.getColumnIndex(ITEMS_COLUMN_NAMEOFLOCATION)), res.getFloat(res.getColumnIndex(ITEMS_COLUMN_LATITUDE)), res.getFloat(res.getColumnIndex(ITEMS_COLUMN_LONGITUDE))));
             res.moveToNext();
         }
         return array_list;

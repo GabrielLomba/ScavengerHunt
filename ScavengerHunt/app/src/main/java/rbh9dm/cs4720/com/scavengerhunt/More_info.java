@@ -38,6 +38,9 @@ public class More_info extends AppCompatActivity {
         TextView description = (TextView) findViewById(R.id.Mdescription);
         description.setText(HuntItems.itemList.get(pos).getDescription());
 
+        TextView location = (TextView) findViewById(R.id.Mlocation);
+        location.setText(HuntItems.itemList.get(pos).getNameOfLocation());
+
         CheckBox chk = (CheckBox) findViewById(R.id.chkcamera);
 
         if (HuntItems.itemList.get(pos).isPictureRequired())

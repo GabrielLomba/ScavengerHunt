@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -38,14 +38,14 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 239,
+                        "startOffset": 235,
                         "endLine": 8,
                         "endColumn": 13,
-                        "endOffset": 515
+                        "endOffset": 507
                     }
                 }
             }
@@ -104,6 +104,32 @@
         ]
     },
     {
+        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 6,
+                    "endColumn": 13,
+                    "endOffset": 327
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 239,
+                        "endLine": 8,
+                        "endColumn": 13,
+                        "endOffset": 515
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
@@ -130,7 +156,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -142,7 +168,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -169,32 +195,6 @@
                 },
                 "from": {
                     "file": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 235,
-                        "endLine": 8,
-                        "endColumn": 13,
-                        "endOffset": 507
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endLine": 6,
-                    "endColumn": 13,
-                    "endOffset": 327
-                },
-                "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hdpi\\values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

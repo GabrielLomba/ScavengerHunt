@@ -385,776 +385,6 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 119,
-                    "endOffset": 170
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 119,
-                        "endOffset": 344
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 175,
-                    "endColumn": 107,
-                    "endOffset": 278
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 349,
-                        "endColumn": 107,
-                        "endOffset": 452
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 283,
-                    "endColumn": 122,
-                    "endOffset": 401
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 457,
-                        "endColumn": 122,
-                        "endOffset": 575
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 406,
-                    "endColumn": 105,
-                    "endOffset": 507
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 580,
-                        "endColumn": 105,
-                        "endOffset": 681
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 512,
-                    "endColumn": 106,
-                    "endOffset": 614
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 686,
-                        "endColumn": 106,
-                        "endOffset": 788
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 619,
-                    "endColumn": 88,
-                    "endOffset": 703
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 793,
-                        "endColumn": 88,
-                        "endOffset": 877
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 708,
-                    "endColumn": 100,
-                    "endOffset": 804
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 882,
-                        "endColumn": 100,
-                        "endOffset": 978
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 809,
-                    "endColumn": 117,
-                    "endOffset": 922
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 983,
-                        "endColumn": 117,
-                        "endOffset": 1096
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 927,
-                    "endColumn": 82,
-                    "endOffset": 1005
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1101,
-                        "endColumn": 82,
-                        "endOffset": 1179
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1010,
-                    "endColumn": 79,
-                    "endOffset": 1085
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1184,
-                        "endColumn": 79,
-                        "endOffset": 1259
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1090,
-                    "endColumn": 86,
-                    "endOffset": 1172
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1264,
-                        "endColumn": 86,
-                        "endOffset": 1346
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1177,
-                    "endColumn": 106,
-                    "endOffset": 1279
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1351,
-                        "endColumn": 106,
-                        "endOffset": 1453
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1284,
-                    "endColumn": 111,
-                    "endOffset": 1391
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1458,
-                        "endColumn": 111,
-                        "endOffset": 1565
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1396,
-                    "endColumn": 101,
-                    "endOffset": 1493
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1570,
-                        "endColumn": 101,
-                        "endOffset": 1667
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1498,
-                    "endColumn": 107,
-                    "endOffset": 1601
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1672,
-                        "endColumn": 107,
-                        "endOffset": 1775
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1606,
-                    "endColumn": 106,
-                    "endOffset": 1708
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1780,
-                        "endColumn": 106,
-                        "endOffset": 1882
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1713,
-                    "endColumn": 109,
-                    "endOffset": 1818
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1887,
-                        "endColumn": 109,
-                        "endOffset": 1992
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1823,
-                    "endColumn": 124,
-                    "endOffset": 1943
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1997,
-                        "endColumn": 124,
-                        "endOffset": 2117
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1948,
-                    "endColumn": 99,
-                    "endOffset": 2043
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2122,
-                        "endColumn": 99,
-                        "endOffset": 2217
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2048,
-                    "endColumn": 100,
-                    "endOffset": 2144
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2222,
-                        "endColumn": 100,
-                        "endOffset": 2318
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 119,
-                    "endOffset": 170
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 119,
-                        "endOffset": 344
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 175,
-                    "endColumn": 107,
-                    "endOffset": 278
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 349,
-                        "endColumn": 107,
-                        "endOffset": 452
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 283,
-                    "endColumn": 122,
-                    "endOffset": 401
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 457,
-                        "endColumn": 122,
-                        "endOffset": 575
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 406,
-                    "endColumn": 105,
-                    "endOffset": 507
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 580,
-                        "endColumn": 105,
-                        "endOffset": 681
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 512,
-                    "endColumn": 106,
-                    "endOffset": 614
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 686,
-                        "endColumn": 106,
-                        "endOffset": 788
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 619,
-                    "endColumn": 88,
-                    "endOffset": 703
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 793,
-                        "endColumn": 88,
-                        "endOffset": 877
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 708,
-                    "endColumn": 100,
-                    "endOffset": 804
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 882,
-                        "endColumn": 100,
-                        "endOffset": 978
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 809,
-                    "endColumn": 117,
-                    "endOffset": 922
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 983,
-                        "endColumn": 117,
-                        "endOffset": 1096
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 927,
-                    "endColumn": 82,
-                    "endOffset": 1005
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1101,
-                        "endColumn": 82,
-                        "endOffset": 1179
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1010,
-                    "endColumn": 79,
-                    "endOffset": 1085
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1184,
-                        "endColumn": 79,
-                        "endOffset": 1259
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1090,
-                    "endColumn": 86,
-                    "endOffset": 1172
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1264,
-                        "endColumn": 86,
-                        "endOffset": 1346
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1177,
-                    "endColumn": 106,
-                    "endOffset": 1279
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1351,
-                        "endColumn": 106,
-                        "endOffset": 1453
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1284,
-                    "endColumn": 111,
-                    "endOffset": 1391
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1458,
-                        "endColumn": 111,
-                        "endOffset": 1565
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1396,
-                    "endColumn": 101,
-                    "endOffset": 1493
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1570,
-                        "endColumn": 101,
-                        "endOffset": 1667
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1498,
-                    "endColumn": 107,
-                    "endOffset": 1601
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1672,
-                        "endColumn": 107,
-                        "endOffset": 1775
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1606,
-                    "endColumn": 106,
-                    "endOffset": 1708
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1780,
-                        "endColumn": 106,
-                        "endOffset": 1882
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1713,
-                    "endColumn": 109,
-                    "endOffset": 1818
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1887,
-                        "endColumn": 109,
-                        "endOffset": 1992
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1823,
-                    "endColumn": 124,
-                    "endOffset": 1943
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1997,
-                        "endColumn": 124,
-                        "endOffset": 2117
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1948,
-                    "endColumn": 99,
-                    "endOffset": 2043
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2122,
-                        "endColumn": 99,
-                        "endOffset": 2217
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2048,
-                    "endColumn": 100,
-                    "endOffset": 2144
-                },
-                "from": {
-                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2222,
-                        "endColumn": 100,
-                        "endOffset": 2318
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
         "map": [
             {
@@ -2091,7 +1321,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
+        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
         "map": [
             {
                 "to": {
@@ -2102,7 +1332,7 @@
                     "endOffset": 170
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2121,7 +1351,7 @@
                     "endOffset": 278
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2140,7 +1370,7 @@
                     "endOffset": 401
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -2159,7 +1389,7 @@
                     "endOffset": 507
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -2178,7 +1408,7 @@
                     "endOffset": 614
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -2197,7 +1427,7 @@
                     "endOffset": 703
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -2216,7 +1446,7 @@
                     "endOffset": 804
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -2235,7 +1465,7 @@
                     "endOffset": 922
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -2254,7 +1484,7 @@
                     "endOffset": 1005
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -2273,7 +1503,7 @@
                     "endOffset": 1085
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -2292,7 +1522,7 @@
                     "endOffset": 1172
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -2311,7 +1541,7 @@
                     "endOffset": 1279
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -2330,7 +1560,7 @@
                     "endOffset": 1391
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -2349,7 +1579,7 @@
                     "endOffset": 1493
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -2368,7 +1598,7 @@
                     "endOffset": 1601
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -2387,7 +1617,7 @@
                     "endOffset": 1708
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -2406,7 +1636,7 @@
                     "endOffset": 1818
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -2425,7 +1655,7 @@
                     "endOffset": 1943
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -2444,7 +1674,7 @@
                     "endOffset": 2043
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -2463,7 +1693,7 @@
                     "endOffset": 2144
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
@@ -3412,7 +2642,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
+        "outputFile": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
         "map": [
             {
                 "to": {
@@ -3423,7 +2653,7 @@
                     "endOffset": 170
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -3442,7 +2672,7 @@
                     "endOffset": 278
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -3461,7 +2691,7 @@
                     "endOffset": 401
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -3480,7 +2710,7 @@
                     "endOffset": 507
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -3499,7 +2729,7 @@
                     "endOffset": 614
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -3518,7 +2748,7 @@
                     "endOffset": 703
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -3537,7 +2767,7 @@
                     "endOffset": 804
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -3556,7 +2786,7 @@
                     "endOffset": 922
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -3575,7 +2805,7 @@
                     "endOffset": 1005
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -3594,7 +2824,7 @@
                     "endOffset": 1085
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -3613,7 +2843,7 @@
                     "endOffset": 1172
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -3632,7 +2862,7 @@
                     "endOffset": 1279
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -3651,7 +2881,7 @@
                     "endOffset": 1391
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -3670,7 +2900,7 @@
                     "endOffset": 1493
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -3689,7 +2919,7 @@
                     "endOffset": 1601
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -3708,7 +2938,7 @@
                     "endOffset": 1708
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -3727,7 +2957,7 @@
                     "endOffset": 1818
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -3746,7 +2976,7 @@
                     "endOffset": 1943
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -3765,7 +2995,7 @@
                     "endOffset": 2043
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -3784,7 +3014,777 @@
                     "endOffset": 2144
                 },
                 "from": {
-                    "file": "C:\\Users\\Student User\\Documents\\GitHub\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "file": "C:\\Users\\Student User\\Documents\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 2222,
+                        "endColumn": 100,
+                        "endOffset": 2318
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 119,
+                    "endOffset": 170
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 119,
+                        "endOffset": 344
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 175,
+                    "endColumn": 107,
+                    "endOffset": 278
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 349,
+                        "endColumn": 107,
+                        "endOffset": 452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 283,
+                    "endColumn": 122,
+                    "endOffset": 401
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 457,
+                        "endColumn": 122,
+                        "endOffset": 575
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 406,
+                    "endColumn": 105,
+                    "endOffset": 507
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 580,
+                        "endColumn": 105,
+                        "endOffset": 681
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 512,
+                    "endColumn": 106,
+                    "endOffset": 614
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 686,
+                        "endColumn": 106,
+                        "endOffset": 788
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 619,
+                    "endColumn": 88,
+                    "endOffset": 703
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 793,
+                        "endColumn": 88,
+                        "endOffset": 877
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 708,
+                    "endColumn": 100,
+                    "endOffset": 804
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 882,
+                        "endColumn": 100,
+                        "endOffset": 978
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 809,
+                    "endColumn": 117,
+                    "endOffset": 922
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 983,
+                        "endColumn": 117,
+                        "endOffset": 1096
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 927,
+                    "endColumn": 82,
+                    "endOffset": 1005
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1101,
+                        "endColumn": 82,
+                        "endOffset": 1179
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1010,
+                    "endColumn": 79,
+                    "endOffset": 1085
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1184,
+                        "endColumn": 79,
+                        "endOffset": 1259
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1090,
+                    "endColumn": 86,
+                    "endOffset": 1172
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1264,
+                        "endColumn": 86,
+                        "endOffset": 1346
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1177,
+                    "endColumn": 106,
+                    "endOffset": 1279
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1351,
+                        "endColumn": 106,
+                        "endOffset": 1453
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1284,
+                    "endColumn": 111,
+                    "endOffset": 1391
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1458,
+                        "endColumn": 111,
+                        "endOffset": 1565
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1396,
+                    "endColumn": 101,
+                    "endOffset": 1493
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1570,
+                        "endColumn": 101,
+                        "endOffset": 1667
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1498,
+                    "endColumn": 107,
+                    "endOffset": 1601
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1672,
+                        "endColumn": 107,
+                        "endOffset": 1775
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1606,
+                    "endColumn": 106,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1780,
+                        "endColumn": 106,
+                        "endOffset": 1882
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 109,
+                    "endOffset": 1818
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1887,
+                        "endColumn": 109,
+                        "endOffset": 1992
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1823,
+                    "endColumn": 124,
+                    "endOffset": 1943
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1997,
+                        "endColumn": 124,
+                        "endOffset": 2117
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1948,
+                    "endColumn": 99,
+                    "endOffset": 2043
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2122,
+                        "endColumn": 99,
+                        "endOffset": 2217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2048,
+                    "endColumn": 100,
+                    "endOffset": 2144
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt-master\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 2222,
+                        "endColumn": 100,
+                        "endOffset": 2318
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\values-pt\\values-pt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 119,
+                    "endOffset": 170
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 119,
+                        "endOffset": 344
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 175,
+                    "endColumn": 107,
+                    "endOffset": 278
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 349,
+                        "endColumn": 107,
+                        "endOffset": 452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 283,
+                    "endColumn": 122,
+                    "endOffset": 401
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 457,
+                        "endColumn": 122,
+                        "endOffset": 575
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 406,
+                    "endColumn": 105,
+                    "endOffset": 507
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 580,
+                        "endColumn": 105,
+                        "endOffset": 681
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 512,
+                    "endColumn": 106,
+                    "endOffset": 614
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 686,
+                        "endColumn": 106,
+                        "endOffset": 788
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 619,
+                    "endColumn": 88,
+                    "endOffset": 703
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 793,
+                        "endColumn": 88,
+                        "endOffset": 877
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 708,
+                    "endColumn": 100,
+                    "endOffset": 804
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 882,
+                        "endColumn": 100,
+                        "endOffset": 978
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 809,
+                    "endColumn": 117,
+                    "endOffset": 922
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 983,
+                        "endColumn": 117,
+                        "endOffset": 1096
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 927,
+                    "endColumn": 82,
+                    "endOffset": 1005
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1101,
+                        "endColumn": 82,
+                        "endOffset": 1179
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1010,
+                    "endColumn": 79,
+                    "endOffset": 1085
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1184,
+                        "endColumn": 79,
+                        "endOffset": 1259
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1090,
+                    "endColumn": 86,
+                    "endOffset": 1172
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1264,
+                        "endColumn": 86,
+                        "endOffset": 1346
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1177,
+                    "endColumn": 106,
+                    "endOffset": 1279
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1351,
+                        "endColumn": 106,
+                        "endOffset": 1453
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1284,
+                    "endColumn": 111,
+                    "endOffset": 1391
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1458,
+                        "endColumn": 111,
+                        "endOffset": 1565
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1396,
+                    "endColumn": 101,
+                    "endOffset": 1493
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1570,
+                        "endColumn": 101,
+                        "endOffset": 1667
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1498,
+                    "endColumn": 107,
+                    "endOffset": 1601
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1672,
+                        "endColumn": 107,
+                        "endOffset": 1775
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1606,
+                    "endColumn": 106,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1780,
+                        "endColumn": 106,
+                        "endOffset": 1882
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 109,
+                    "endOffset": 1818
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1887,
+                        "endColumn": 109,
+                        "endOffset": 1992
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1823,
+                    "endColumn": 124,
+                    "endOffset": 1943
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1997,
+                        "endColumn": 124,
+                        "endOffset": 2117
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1948,
+                    "endColumn": 99,
+                    "endOffset": 2043
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2122,
+                        "endColumn": 99,
+                        "endOffset": 2217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2048,
+                    "endColumn": 100,
+                    "endOffset": 2144
+                },
+                "from": {
+                    "file": "C:\\Users\\Gabriel Lomba\\Desktop\\ScavengerHunt\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-pt\\values-pt.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,

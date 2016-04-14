@@ -4,10 +4,14 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -17,17 +21,27 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
+import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class More_info extends AppCompatActivity {
 
-    private double lat = 38.03;
-    private double lon = -78.52;
+    private double lat;
+    private double lon;
+    public int pos;
+    public String nameOfHunt;
     private double currLat = 0;
     private double currLon = 0;
 
     LocationManager locationManager;
     LocationListener locationListener;
+
+    private ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +52,9 @@ public class More_info extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
+        pos = intent.getIntExtra(HuntItems.POSITION, 0);
+        nameOfHunt = intent.getStringExtra("nameOfHunt");
 
-        int pos = intent.getIntExtra(HuntItems.POSITION, 0);
         getSupportActionBar().setTitle(HuntItems.itemList.get(pos).getName());
 
         TextView description = (TextView) findViewById(R.id.Mdescription);
@@ -47,6 +62,16 @@ public class More_info extends AppCompatActivity {
 
         TextView loc = (TextView) findViewById(R.id.Mlocation);
         loc.setText(HuntItems.itemList.get(pos).getNameOfLocation());
+
+        iv = (ImageView) findViewById(R.id.iv);
+
+        Bitmap bp = Tab1.myImgDB.getImage(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName());
+
+        if (bp != null)
+            iv.setImageBitmap(bp);
+
+        lat = HuntItems.itemList.get(pos).getLatitude();
+        lon = HuntItems.itemList.get(pos).getLongitude();
 
         CheckBox chk = (CheckBox) findViewById(R.id.chkcamera);
 
@@ -93,6 +118,34 @@ public class More_info extends AppCompatActivity {
                 distText.setText(""+currLat+", "+currLon+": "+dist[0]);
             }
         });
+
+        Button camera = (Button) this.findViewById(R.id.camera);
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // create Intent to take a picture and return control to the
+                // calling application Intent
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                // create a file to save the image
+                // fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+
+                // set the image file name
+                // intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+
+                // start the image capture Intent
+                startActivityForResult(intent, 0);
+
+            }
+        });
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bp = (Bitmap) data.getExtras().get("data");
+        Tab1.myImgDB.insertHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
+        iv.setImageBitmap(bp);
     }
 
 }

@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.google.android.gms.maps.model.LatLng;
@@ -20,15 +21,16 @@ import java.util.ArrayList;
 
 public class Add_Hunt_Item extends AppCompatActivity {
 
-    public String nameOfLocation = "";
-    public float latitude = 0, longitude= 0;
+    // public String nameOfLocation = "";
+    // public float latitude = 0, longitude= 0;
+    public int position = -1;
 
     public static ArrayList<String> itemList = new ArrayList<>();
     public static ArrayList<LatLng> coordinates = new ArrayList<>();
     public static ArrayAdapter<String> itemAdapter;
 
-    public static final String LATITUDE = "latitude";
-    public static final String LONGITUDE = "longitude";
+   // public static final String LATITUDE = "latitude";
+    //public static final String LONGITUDE = "longitude";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +43,20 @@ public class Add_Hunt_Item extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                Intent intent = new Intent(Add_Hunt_Item.this, MapsActivity.class);
-                intent.putExtra(LATITUDE, coordinates.get(position).latitude);
-                intent.putExtra(LONGITUDE, coordinates.get(position).longitude);
-                startActivity(intent);
+                //Intent intent = new Intent(Add_Hunt_Item.this, MapsActivity.class);
+                //intent.putExtra(LATITUDE, coordinates.get(position).latitude);
+                //intent.putExtra(LONGITUDE, coordinates.get(position).longitude);
+                //coordinates.get(position).latitude;
+                //coordinates.get(position).longitude;
+                //startActivity(intent);
+                Add_Hunt_Item.this.position = position;
+
+                Context context = getApplicationContext();
+                CharSequence text = "You selected " + Add_Hunt_Item.this.itemList.get(position);
+                int duration = Toast.LENGTH_LONG;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
 
@@ -54,13 +66,14 @@ public class Add_Hunt_Item extends AppCompatActivity {
         getSupportActionBar().setTitle("Add a Task");
 
         /*** Set up Search Button ***/
-        Button search = (Button) findViewById(R.id.search);
+        ImageButton search = (ImageButton) findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText locationField = (EditText) findViewById(R.id.searchLoc);
-                nameOfLocation = ""+locationField.getText();
-                String newName = nameOfLocation.replaceAll(" ", "%20");
+                //nameOfLocation = ""+locationField.getText();
+                //String newName = nameOfLocation.replaceAll(" ", "%20");
+                String newName = (""+ locationField.getText()).replaceAll(" ", "%20");;
                 String url = "http://maps.google.com/maps/api/geocode/json?address="+newName+"&sensor=false";
                 new DataLongOperationAsynchTask(getApplicationContext()).execute(url);
             }
@@ -73,7 +86,7 @@ public class Add_Hunt_Item extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText locationField = (EditText) findViewById(R.id.searchLoc);
-                nameOfLocation = ""+locationField.getText();
+                //nameOfLocation = ""+locationField.getText();
                 EditText nameField = (EditText) findViewById(R.id.nameHuntItem);
                 String name = ""+nameField.getText();
                 /*** Don't add if the name is empty ***/
@@ -86,7 +99,7 @@ public class Add_Hunt_Item extends AppCompatActivity {
                     toast.show();
                 }
                 /** Don't add if the location wasn't set **/
-                else if(nameOfLocation.equals("")){
+                else if(position == -1){
                     Context context = getApplicationContext();
                     CharSequence text = "Please set a location";
                     int duration = Toast.LENGTH_LONG;
@@ -114,12 +127,12 @@ public class Add_Hunt_Item extends AppCompatActivity {
                     boolean locReq = locReqField.isChecked();
 
 
-                    LineItem item = new LineItem(name, desc, picReq, locReq, nameOfLocation, latitude, longitude);
+                    LineItem item = new LineItem(name, desc, picReq, locReq, itemList.get(position), coordinates.get(position).latitude, coordinates.get(position).longitude);
                     HuntItems.itemList.add(item);
 
                     Intent intent = getIntent();
 
-                    Tab1.myHuntDB.insertHunt(intent.getStringExtra("name"), name, desc, picReq, locReq, nameOfLocation, latitude, longitude);
+                    Tab1.myHuntDB.insertHunt(intent.getStringExtra("name"), name, desc, picReq, locReq, itemList.get(position), coordinates.get(position).latitude, coordinates.get(position).longitude);
 
                     HuntItems.itemAdapter.notifyDataSetChanged();
 

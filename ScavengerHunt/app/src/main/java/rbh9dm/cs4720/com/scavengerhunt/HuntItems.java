@@ -28,6 +28,7 @@ public class HuntItems extends AppCompatActivity {
     public static ArrayList<LineItem> itemList = new ArrayList<LineItem>();
     public static ArrayAdapter<LineItem> itemAdapter;
     public static final String POSITION = "position";
+    private int pos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class HuntItems extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
-        int pos = intent.getIntExtra(Tab1.ID, 0);
+        pos = intent.getIntExtra(Tab1.ID, 0);
         getSupportActionBar().setTitle(Tab1.huntList.get(pos).getName());
 
         /*** Load items ***/
@@ -59,6 +60,7 @@ public class HuntItems extends AppCompatActivity {
 
                 Intent intent = new Intent(HuntItems.this, More_info.class);
                 intent.putExtra(POSITION, position);
+                intent.putExtra("nameOfHunt", Tab1.huntList.get(pos).getName());
                 startActivity(intent);
             }
         });

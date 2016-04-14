@@ -79,4 +79,11 @@
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv"
+        android:layout_above="@+id/camera"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

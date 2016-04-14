@@ -9,7 +9,10 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 
+import java.io.ByteArrayOutputStream;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -32,7 +35,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
 
     public HuntItemDBHelper(Context context)
     {
-        super(context, DATABASE_NAME , null, 1);
+        super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
@@ -40,7 +43,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         db.execSQL(
                 "create table items " +
-                        "(nameOfHunt text, name text, description text, picReq integer, locReq integer, nameOfLoc text, latitude float, longitude float)"
+                        "(nameOfHunt text, name text, description text, picReq integer, locReq integer, nameOfLoc text, latitude double, longitude double)"
         );
     }
 
@@ -51,7 +54,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertHunt  (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, String nameOfLocation, float latitude, float longitude)
+    public boolean insertHunt  (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, String nameOfLocation, double latitude, double longitude)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -63,9 +66,14 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_NAMEOFLOCATION, nameOfLocation);
         contentValues.put(ITEMS_COLUMN_LATITUDE, latitude);
         contentValues.put(ITEMS_COLUMN_LONGITUDE, longitude);
+        /*
+        byte[] data = getBitmapAsByteArray(pic);
+        contentValues.put(ITEMS_COLUMN_PIC, data);
+        */
         db.insert(ITEMS_TABLE_NAME, null, contentValues);
         return true;
     }
+
 
     public Cursor getData(String nameOfHunt){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -79,7 +87,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateHunt (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, String nameOfLocation, float latitude, float longitude)
+    public boolean updateHunt (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, String nameOfLocation, double latitude, double longitude)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -90,6 +98,10 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_NAMEOFLOCATION, nameOfLocation);
         contentValues.put(ITEMS_COLUMN_LATITUDE, latitude);
         contentValues.put(ITEMS_COLUMN_LONGITUDE, longitude);
+        /*
+        byte[] data = getBitmapAsByteArray(pic);
+        contentValues.put(ITEMS_COLUMN_PIC, data);
+        */
         db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { nameOfHunt } );
         return true;
     }
@@ -107,7 +119,7 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from items where nameOfHunt= ? and name = ?", new String[] { nameOfHunt, name });
         res.moveToFirst();
-        if(res.isAfterLast() == false)
+        if(!res.isAfterLast())
                 return true;
         return false;
     }

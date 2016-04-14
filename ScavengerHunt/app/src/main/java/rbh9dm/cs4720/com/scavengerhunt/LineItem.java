@@ -11,10 +11,10 @@ public class LineItem {
     private boolean pictureOk;
     private boolean locationOk;
     private String nameOfLocation;
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
 
-    public LineItem(String name, String description, boolean pictureRequired, boolean locationRequired, String nameOfLocation, float latitude, float longitude) {
+    public LineItem(String name, String description, boolean pictureRequired, boolean locationRequired, String nameOfLocation, double latitude, double longitude) {
         this.name = name;
         this.description = description;
         this.pictureRequired = pictureRequired;
@@ -24,7 +24,7 @@ public class LineItem {
         this.longitude = longitude;
     }
 
-    public LineItem(String name, String description, int pictureRequired, int locationRequired, String nameOfLocation, float latitude, float longitude) {
+    public LineItem(String name, String description, int pictureRequired, int locationRequired, String nameOfLocation, double latitude, double longitude) {
         this.name = name;
         this.description = description;
         if(pictureRequired == 0)
@@ -92,19 +92,19 @@ public class LineItem {
         this.nameOfLocation = nameOfLocation;
     }
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(float longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(float latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 

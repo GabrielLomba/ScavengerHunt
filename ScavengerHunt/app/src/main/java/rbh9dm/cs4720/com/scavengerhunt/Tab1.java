@@ -30,6 +30,7 @@ public class Tab1 extends Fragment {
     public static final String ID = "id";
     public static ScavengerHuntDBHelper myDB;
     public static HuntItemDBHelper myHuntDB;
+    public static MoreInfoDBHelper myImgDB;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class Tab1 extends Fragment {
         /*** connect to DB and load items ***/
         myDB = new ScavengerHuntDBHelper(getActivity());
         myHuntDB = new HuntItemDBHelper(getActivity());
+        myImgDB = new MoreInfoDBHelper(getActivity());
         huntList = myDB.getAllHunts();
         huntsAdapter = new ArrayAdapter<ScavengerHunt>(getActivity(), android.R.layout.simple_list_item_1, huntList);
 
@@ -58,7 +60,8 @@ public class Tab1 extends Fragment {
         });
         
         /*** Add FAB ***/
-        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        //FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

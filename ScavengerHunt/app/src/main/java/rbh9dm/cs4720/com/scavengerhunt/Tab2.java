@@ -61,7 +61,7 @@ public class Tab2 extends Fragment {
 
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +69,7 @@ public class Tab2 extends Fragment {
                 //Intent intent = new Intent(getActivity(), AddScavengerHunt.class);
                 //startActivity(intent);
             }
-        });
+        });*/
 
         return v;
 

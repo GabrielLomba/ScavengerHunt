@@ -13,18 +13,22 @@ public class LineItem {
     private String nameOfLocation;
     private double latitude;
     private double longitude;
+    private boolean complete;
 
-    public LineItem(String name, String description, boolean pictureRequired, boolean locationRequired, String nameOfLocation, double latitude, double longitude) {
+    public LineItem(String name, String description, boolean pictureRequired, boolean locationRequired, boolean pictureOk, boolean locationOk, String nameOfLocation, double latitude, double longitude, boolean complete) {
         this.name = name;
         this.description = description;
         this.pictureRequired = pictureRequired;
         this.locationRequired= locationRequired;
+        this.pictureOk = pictureOk;
+        this.locationOk = locationOk;
         this.nameOfLocation = nameOfLocation;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.complete = complete;
     }
 
-    public LineItem(String name, String description, int pictureRequired, int locationRequired, String nameOfLocation, double latitude, double longitude) {
+    public LineItem(String name, String description, int pictureRequired, int locationRequired, int pictureOk, int locationOk, String nameOfLocation, double latitude, double longitude, int complete) {
         this.name = name;
         this.description = description;
         if(pictureRequired == 0)
@@ -35,9 +39,21 @@ public class LineItem {
             this.locationRequired = false;
         else
             this.locationRequired = true;
+        if(pictureOk == 0)
+            this.pictureOk = false;
+        else
+            this.pictureOk = true;
+        if(locationOk == 0)
+            this.locationOk = false;
+        else
+            this.locationOk = true;
         this.nameOfLocation = nameOfLocation;
         this.latitude = latitude;
         this.longitude = longitude;
+        if(complete == 0)
+            this.complete = false;
+        else
+            this.complete = true;
     }
 
     public String getName() {
@@ -114,6 +130,14 @@ public class LineItem {
 
     public void setLocationOk(boolean locationOk) {
         this.locationOk = locationOk;
+    }
+
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 
 

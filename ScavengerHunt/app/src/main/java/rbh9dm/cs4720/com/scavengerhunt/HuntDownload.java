@@ -87,7 +87,7 @@ public class HuntDownload extends AppCompatActivity {
                                 }
                             }
 
-                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, nameOfLocation, (float)latitude, (float)longitude));
+                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, false, false, nameOfLocation, (float)latitude, (float)longitude, false));
                         }
                     }
                 }
@@ -119,7 +119,7 @@ public class HuntDownload extends AppCompatActivity {
                     selected += "(" + i + ")";
                 }
                 for (LineItem task : itemList) {
-                    Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired(), task.getNameOfLocation(), task.getLatitude(), task.getLongitude());
+                    Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired(), false, false, task.getNameOfLocation(), task.getLatitude(), task.getLongitude(), false);
                 }
                 Tab1.myDB.insertHunt(selected, false);
                 Tab1.huntList.add(new ScavengerHunt(selected));

@@ -21,9 +21,11 @@ import java.util.ArrayList;
 
 public class Add_Hunt_Item extends AppCompatActivity {
 
-    // public String nameOfLocation = "";
-    // public float latitude = 0, longitude= 0;
-    public int position = -1;
+    public String nameOfLocation = "";
+    private double latitude = Double.POSITIVE_INFINITY;
+    private double longitude= Double.POSITIVE_INFINITY;
+
+    //private int position = -1;
 
     public static ArrayList<String> itemList = new ArrayList<>();
     public static ArrayList<LatLng> coordinates = new ArrayList<>();
@@ -49,7 +51,11 @@ public class Add_Hunt_Item extends AppCompatActivity {
                 //coordinates.get(position).latitude;
                 //coordinates.get(position).longitude;
                 //startActivity(intent);
-                Add_Hunt_Item.this.position = position;
+                //Add_Hunt_Item.this.position = position;
+
+                nameOfLocation = itemList.get(position);
+                latitude = coordinates.get(position).latitude;
+                longitude = coordinates.get(position).longitude;
 
                 Context context = getApplicationContext();
                 CharSequence text = "You selected " + Add_Hunt_Item.this.itemList.get(position);
@@ -99,7 +105,7 @@ public class Add_Hunt_Item extends AppCompatActivity {
                     toast.show();
                 }
                 /** Don't add if the location wasn't set **/
-                else if(position == -1){
+                else if(latitude == Float.POSITIVE_INFINITY){
                     Context context = getApplicationContext();
                     CharSequence text = "Please set a location";
                     int duration = Toast.LENGTH_LONG;
@@ -127,12 +133,12 @@ public class Add_Hunt_Item extends AppCompatActivity {
                     boolean locReq = locReqField.isChecked();
 
 
-                    LineItem item = new LineItem(name, desc, picReq, locReq, itemList.get(position), coordinates.get(position).latitude, coordinates.get(position).longitude);
+                    LineItem item = new LineItem(name, desc, picReq, locReq, false, false, nameOfLocation, latitude, longitude, false);
                     HuntItems.itemList.add(item);
 
                     Intent intent = getIntent();
 
-                    Tab1.myHuntDB.insertHunt(intent.getStringExtra("name"), name, desc, picReq, locReq, itemList.get(position), coordinates.get(position).latitude, coordinates.get(position).longitude);
+                    Tab1.myHuntDB.insertHunt(intent.getStringExtra("name"), name, desc, picReq, locReq, false, false, nameOfLocation, latitude, longitude, false);
 
                     HuntItems.itemAdapter.notifyDataSetChanged();
 

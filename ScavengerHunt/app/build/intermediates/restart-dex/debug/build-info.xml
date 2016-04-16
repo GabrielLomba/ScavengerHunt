@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="23"
-    density="xhdpi"
+    abi="armeabi-v7a,armeabi"
+    api-level="22"
+    density="tvdpi"
     format="7"
-    timestamp="28108023941770" >
+    timestamp="132221183631280" >
 
     <task
         name="javac"
-        duration="24159" />
+        duration="1257" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="3115" />
+        duration="16" />
     <task
         name="verifier"
-        duration="1556" />
+        duration="8" />
 
     <artifact
-        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
 
-    <build timestamp="28108023941770" >
+    <build timestamp="130070127576081" >
         <artifact
             location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="132221183631280" >
+        <artifact
+            location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

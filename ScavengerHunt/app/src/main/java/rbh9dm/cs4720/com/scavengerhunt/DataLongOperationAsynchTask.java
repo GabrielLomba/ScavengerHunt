@@ -68,6 +68,9 @@ public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[
             }
             if (Add_Hunt_Item.itemList.size() == 0) {
                 CharSequence text = "No results were found. Please, change the search";
+                Add_Hunt_Item.itemList.clear();
+                Add_Hunt_Item.itemAdapter.notifyDataSetChanged();
+                Add_Hunt_Item.coordinates.clear();
                 int duration = Toast.LENGTH_LONG;
 
                 Toast toast = Toast.makeText(this.context, text, duration);

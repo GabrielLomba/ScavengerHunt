@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -21,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,10 +33,19 @@ import java.util.Date;
 
 public class More_info extends AppCompatActivity {
 
+    private int pos;
+    private String nameOfHunt;
+
+    private boolean locReq;
+    private boolean locOk;
+    private boolean picReq;
+    private boolean picOk;
+
+    private CheckBox chk;
+    private boolean taskDone;
+
     private double lat;
     private double lon;
-    public int pos;
-    public String nameOfHunt;
     private double currLat = 0;
     private double currLon = 0;
 
@@ -57,40 +68,92 @@ public class More_info extends AppCompatActivity {
 
         getSupportActionBar().setTitle(HuntItems.itemList.get(pos).getName());
 
+        /************ Set description text ****************/
         TextView description = (TextView) findViewById(R.id.Mdescription);
         description.setText(HuntItems.itemList.get(pos).getDescription());
 
-        TextView loc = (TextView) findViewById(R.id.Mlocation);
-        loc.setText(HuntItems.itemList.get(pos).getNameOfLocation());
+        /*********** What is required? What is ok? ******************/
+        locReq = HuntItems.itemList.get(pos).isLocationRequired();
+        locOk = HuntItems.itemList.get(pos).isLocationOk();
+        picReq = HuntItems.itemList.get(pos).isPictureRequired();
+        picOk = HuntItems.itemList.get(pos).isPictureOk();
 
-        iv = (ImageView) findViewById(R.id.iv);
+        /*********** Is the task complete? ****************/
+        taskDone = HuntItems.itemList.get(pos).isComplete();
+        chk = (CheckBox) findViewById(R.id.complete);
+        if ((locReq && !locOk) || (picReq && !picOk))
+            chk.setEnabled(false);
+        else if (taskDone) {
+            chk.setChecked(true);
+        }
+        chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-        Bitmap bp = Tab1.myImgDB.getImage(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName());
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                // Adjust hunt item in list
+                HuntItems.itemList.get(pos).setComplete(isChecked);
+                HuntItems.itemAdapter.notifyDataSetChanged();
 
-        if (bp != null)
-            iv.setImageBitmap(bp);
+                // Update DB
+                Tab1.myHuntDB.updateComplete(nameOfHunt, HuntItems.itemList.get(pos).getName(), isChecked);
+            }
+        });
 
+        /************* Is location required? Is it ok? **************/
+        TextView Mloc = (TextView) findViewById(R.id.Mlocation);
+
+        if (locReq)
+            Mloc.setText("Location: Required");
+        if (locOk)
+            Mloc.setTextColor(Color.parseColor("#00ff00"));
+
+        /************** Set Destination ******************/
+        TextView dest = (TextView) findViewById(R.id.dest);
+        dest.setText("Destination: " + HuntItems.itemList.get(pos).getNameOfLocation());
+
+
+        /*********** Set lat/long of destination **************/
         lat = HuntItems.itemList.get(pos).getLatitude();
         lon = HuntItems.itemList.get(pos).getLongitude();
 
-        CheckBox chk = (CheckBox) findViewById(R.id.chkcamera);
-
-        if (HuntItems.itemList.get(pos).isPictureRequired())
-            chk.setText("Required");
-        chk.setChecked(HuntItems.itemList.get(pos).isPictureOk());
-        chk = (CheckBox) findViewById(R.id.chklocation);
-
-        if (HuntItems.itemList.get(pos).isLocationRequired())
-            chk.setText("Required");
-        chk.setChecked(HuntItems.itemList.get(pos).isLocationOk());
-
+        /************* Set up location listener ***************/
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
+
+                // Find current location
                 currLat = location.getLatitude();
                 currLon = location.getLongitude();
+
+                // Get distance from goal
+                float[] dist = new float[3];
+                Location.distanceBetween(lat, lon, currLat, currLon, dist);
+                float distance = dist[0];
+
+                // Display Distance
+                TextView distText = (TextView) findViewById(R.id.distance);
+                distText.setText("Distance: "+distance);
+
+                // Adjust if appropriate
+                if (distance < 1000 && !locOk) {
+                    TextView Mloc = (TextView) findViewById(R.id.Mlocation);
+                    Mloc.setTextColor(Color.parseColor("#00ff00"));
+                    locOk = true;
+
+                    // Adjust hunt item in list
+                    HuntItems.itemList.get(pos).setLocationOk(true);
+                    HuntItems.itemAdapter.notifyDataSetChanged();
+
+                    // Update DB
+                    Tab1.myHuntDB.updateLocOk(nameOfHunt, HuntItems.itemList.get(pos).getName(), true);
+
+                    // Enable check box?
+                    if (!(picReq && !picOk))
+                        chk.setEnabled(true);
+                }
+
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {}
@@ -102,23 +165,30 @@ public class More_info extends AppCompatActivity {
 
         if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             TextView distText = (TextView) findViewById(R.id.distance);
-            distText.setText("GPS not enabled");
+            distText.setText("Distance: GPS not enabled");
         }
         else {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
         }
 
-        Button locButton = (Button) this.findViewById(R.id.location);
-        locButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                float[] dist = new float[3];
-                Location.distanceBetween(lat, lon, currLat, currLon, dist);
-                TextView distText = (TextView) findViewById(R.id.distance);
-                distText.setText(""+currLat+", "+currLon+": "+dist[0]);
-            }
-        });
+        /************** Is picture required? Is it ok? ************/
+        TextView Mpic = (TextView) findViewById(R.id.Mpic);
 
+        picReq = HuntItems.itemList.get(pos).isPictureRequired();
+        if (picReq)
+            Mpic.setText("Picture: Required");
+        picOk = HuntItems.itemList.get(pos).isPictureOk();
+        if (picOk)
+            Mpic.setTextColor(Color.parseColor("#00ff00"));
+
+        /************** Retrieve picture **********************/
+        iv = (ImageView) findViewById(R.id.iv);
+        Bitmap bp = Tab1.myImgDB.getImage(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName());
+        if (bp != null)
+            iv.setImageBitmap(bp);
+
+
+        /**************** Set up camera button *************/
         Button camera = (Button) this.findViewById(R.id.camera);
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,11 +196,6 @@ public class More_info extends AppCompatActivity {
                 // create Intent to take a picture and return control to the
                 // calling application Intent
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                // create a file to save the image
-                // fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-
-                // set the image file name
-                // intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
 
                 // start the image capture Intent
                 startActivityForResult(intent, 0);
@@ -138,14 +203,39 @@ public class More_info extends AppCompatActivity {
             }
         });
 
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bp = (Bitmap) data.getExtras().get("data");
-        Tab1.myImgDB.insertHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
-        iv.setImageBitmap(bp);
+        Bundle extras = data.getExtras();
+        if (extras != null) {
+            Bitmap bp = (Bitmap) extras.get("data");
+            if (Tab1.myImgDB.exists(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName()))
+                Tab1.myImgDB.updateHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
+            else
+                Tab1.myImgDB.insertHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
+            iv.setImageBitmap(bp);
+
+            if (!picOk) {
+                TextView Mpic = (TextView) findViewById(R.id.Mpic);
+                Mpic.setTextColor(Color.parseColor("#00ff00"));
+                picOk = true;
+
+                // Adjust hunt item in list
+                HuntItems.itemList.get(pos).setPictureOk(true);
+                HuntItems.itemAdapter.notifyDataSetChanged();
+
+                // Update DB
+                Tab1.myHuntDB.updatePicOk(nameOfHunt, HuntItems.itemList.get(pos).getName(), true);
+
+                // Enable Checkbox?
+                // Enable check box?
+                if (!(locReq && !locOk))
+                    chk.setEnabled(true);
+            }
+        }
     }
 
 }

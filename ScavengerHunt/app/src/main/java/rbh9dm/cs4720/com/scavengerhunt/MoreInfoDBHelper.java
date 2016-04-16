@@ -83,8 +83,18 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_NAME, name);
         byte[] data = getBitmapAsByteArray(pic);
         contentValues.put(ITEMS_COLUMN_PIC, data);
-        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { nameOfHunt } );
+        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ?", new String[] { nameOfHunt, name } );
         return true;
+    }
+
+    public boolean exists (String nameOfHunt, String name)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from pics where nameOfHunt= ? and name = ?", new String[] { nameOfHunt, name });
+        res.moveToFirst();
+        if(!res.isAfterLast())
+            return true;
+        return false;
     }
 
     public Integer deleteHunt (String nameOfHunt, String name)

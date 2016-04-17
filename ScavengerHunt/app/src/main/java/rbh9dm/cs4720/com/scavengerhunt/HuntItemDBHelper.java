@@ -1,24 +1,14 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
-/**
- * Created by Student User on 3/30/2016.
- */
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-
-import java.io.ByteArrayOutputStream;
-import java.sql.Blob;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-/**
- * Created by Student User on 3/28/2016.
- */
+
 public class HuntItemDBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "HuntItem2.db";
@@ -35,7 +25,6 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
     public static final String ITEMS_COLUMN_LONGITUDE = "longitude";
     public static final String ITEMS_COLUMN_COMPLETE = "complete";
 
-    private HashMap hp;
 
     public HuntItemDBHelper(Context context)
     {
@@ -84,14 +73,12 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
 
     public Cursor getData(String nameOfHunt){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from items2 where nameOfHunt="+nameOfHunt+"", null );
-        return res;
+        return db.rawQuery( "select * from items2 where nameOfHunt="+nameOfHunt+"", null );
     }
 
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, ITEMS_TABLE_NAME);
-        return numRows;
+        return (int) DatabaseUtils.queryNumEntries(db, ITEMS_TABLE_NAME);
     }
 
     public boolean updateHunt (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, boolean picOk, boolean locOk, String nameOfLocation, double latitude, double longitude, boolean complete)
@@ -148,11 +135,11 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ?", new String[] { nameOfHunt, name } );
         return true;
     }
-    public Integer deleteHunt (String nameOfHunt, String name)
+    public Integer deleteHunt (String nameOfHunt)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete("items2",
-                "id = ? ",
+                "nameOfHunt = ? ",
                 new String[] { nameOfHunt });
     }
 
@@ -161,24 +148,33 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from items2 where nameOfHunt= ? and name = ?", new String[] { nameOfHunt, name });
         res.moveToFirst();
-        if(!res.isAfterLast())
-                return true;
-        return false;
+        if(!res.isAfterLast()){
+            res.close();
+            return true;
+        }
+        else{
+            res.close();
+            return false;
+        }
     }
 
     public ArrayList<LineItem> getAllItems(String nameOfHunt)
     {
-        ArrayList<LineItem> array_list = new ArrayList<LineItem>();
+        ArrayList<LineItem> array_list = new ArrayList<>();
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from items2 where nameOfHunt= ? ", new String[] { nameOfHunt } );
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
+        while(!res.isAfterLast()){
             array_list.add(new LineItem(res.getString(res.getColumnIndex(ITEMS_COLUMN_NAME)), res.getString(res.getColumnIndex(ITEMS_COLUMN_DESCRIPTION)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_PICREQ)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_LOCREQ)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_PICOK)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_LOCOK)), res.getString(res.getColumnIndex(ITEMS_COLUMN_NAMEOFLOCATION)), res.getFloat(res.getColumnIndex(ITEMS_COLUMN_LATITUDE)), res.getFloat(res.getColumnIndex(ITEMS_COLUMN_LONGITUDE)), res.getInt(res.getColumnIndex(ITEMS_COLUMN_COMPLETE))));
             res.moveToNext();
         }
+
+        db.close();
+        res.close();
+
         return array_list;
     }
 }

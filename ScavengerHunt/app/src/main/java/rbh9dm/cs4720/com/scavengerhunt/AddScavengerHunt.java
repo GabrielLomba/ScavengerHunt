@@ -1,23 +1,17 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
 
 public class AddScavengerHunt extends AppCompatActivity {
 
-    public static final String RESULT = "result";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +31,7 @@ public class AddScavengerHunt extends AppCompatActivity {
                 EditText nameField = (EditText) findViewById(R.id.editText);
                 String name = nameField.getText().toString();
                 /*** Don't add if name is empty ***/
-                if(name.equals("")) {
+                if (name.equals("")) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please name your Scavenger Hunt";
                     int duration = Toast.LENGTH_LONG;
@@ -46,7 +40,7 @@ public class AddScavengerHunt extends AppCompatActivity {
                     toast.show();
                 }
                 /** Don't add if the name is not unique **/
-                else if(Tab1.myDB.exists(name)){
+                else if (Tab1.myDB.exists(name)) {
                     Context context = getApplicationContext();
                     CharSequence text = "Names of the Scavenger Hunts must be unique";
                     int duration = Toast.LENGTH_LONG;
@@ -57,7 +51,7 @@ public class AddScavengerHunt extends AppCompatActivity {
                 /*** Add otherwise ***/
                 else {
                     Tab1.myDB.insertHunt(name, false);
-                    Tab1.huntList.add(new ScavengerHunt(name));
+                    Tab1.huntList.add(name);
                     Tab1.huntsAdapter.notifyDataSetChanged();
 
                     finish();

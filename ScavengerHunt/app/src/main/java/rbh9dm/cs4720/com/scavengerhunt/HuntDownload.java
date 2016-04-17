@@ -3,28 +3,23 @@ package rbh9dm.cs4720.com.scavengerhunt;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.Map;
 
 public class HuntDownload extends AppCompatActivity {
 
-    public static ArrayList<LineItem> itemList = new ArrayList<LineItem>();
+    public static ArrayList<LineItem> itemList = new ArrayList<>();
     public static ArrayAdapter<LineItem> itemAdapter;
 
     @Override
@@ -64,10 +59,10 @@ public class HuntDownload extends AppCompatActivity {
                             for (Map.Entry<String, String> entry : read.entrySet()) {
                                 switch (entry.getKey()){
                                     case "name":
-                                        name = entry.getValue().toString();
+                                        name = entry.getValue();
                                         break;
                                     case "description":
-                                        description = entry.getValue().toString();
+                                        description = entry.getValue();
                                         break;
                                     case "pictureRequired":
                                         picReq = entry.getValue();
@@ -87,7 +82,7 @@ public class HuntDownload extends AppCompatActivity {
                                 }
                             }
 
-                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, false, false, nameOfLocation, (float)latitude, (float)longitude, false));
+                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, false, false, nameOfLocation, (double)latitude, (double)longitude, false));
                         }
                     }
                 }
@@ -99,7 +94,7 @@ public class HuntDownload extends AppCompatActivity {
             }
         });
         ListView listView = (ListView) findViewById(R.id.downloadList);
-        itemAdapter = new ArrayAdapter<LineItem>(this, android.R.layout.simple_list_item_1, itemList);
+        itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
         listView.setAdapter(itemAdapter);
 
         /*** Download button ***/
@@ -122,7 +117,7 @@ public class HuntDownload extends AppCompatActivity {
                     Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired(), false, false, task.getNameOfLocation(), task.getLatitude(), task.getLongitude(), false);
                 }
                 Tab1.myDB.insertHunt(selected, false);
-                Tab1.huntList.add(new ScavengerHunt(selected));
+                Tab1.huntList.add(selected);
                 Tab1.huntsAdapter.notifyDataSetChanged();
 
                 Context context = getApplicationContext();

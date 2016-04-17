@@ -4,28 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-
 import java.util.ArrayList;
 
 public class HuntItems extends AppCompatActivity {
 
-    public static ArrayList<LineItem> itemList = new ArrayList<LineItem>();
+    public static ArrayList<LineItem> itemList = new ArrayList<>();
     public static ArrayAdapter<LineItem> itemAdapter;
     public static final String POSITION = "position";
     private int pos;
@@ -43,14 +38,14 @@ public class HuntItems extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
         pos = intent.getIntExtra(Tab1.ID, 0);
-        getSupportActionBar().setTitle(Tab1.huntList.get(pos).getName());
+        getSupportActionBar().setTitle(Tab1.huntList.get(pos));
 
         /*** Load items ***/
-        itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos).getName());
+        itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos));
         //Log.i("look look look", "This is the length of me list: " + itemList.size());
 
         ListView listView = (ListView)findViewById(R.id.listview2);
-        itemAdapter = new ArrayAdapter<LineItem>(this, android.R.layout.simple_list_item_1, itemList);
+        itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
         listView.setAdapter(itemAdapter);
 
         /*** Navigate to more info screen ***/
@@ -60,7 +55,7 @@ public class HuntItems extends AppCompatActivity {
 
                 Intent intent = new Intent(HuntItems.this, More_info.class);
                 intent.putExtra(POSITION, position);
-                intent.putExtra("nameOfHunt", Tab1.huntList.get(pos).getName());
+                intent.putExtra("nameOfHunt", Tab1.huntList.get(pos));
                 startActivity(intent);
             }
         });
@@ -73,7 +68,7 @@ public class HuntItems extends AppCompatActivity {
                 Intent getIntent = getIntent();
                 int pos = getIntent.getIntExtra(Tab1.ID, 0);
                 Intent intent = new Intent(HuntItems.this, Add_Hunt_Item.class);
-                intent.putExtra("name", Tab1.huntList.get(pos).getName());
+                intent.putExtra("name", Tab1.huntList.get(pos));
                 startActivity(intent);
             }
         });
@@ -88,7 +83,7 @@ public class HuntItems extends AppCompatActivity {
                     Intent intent = getIntent();
                     int pos = intent.getIntExtra(Tab1.ID, 0);
                     Firebase myFirebaseRef = new Firebase("https://cs4720scavhunt.firebaseio.com/hunts");
-                    final String name = Tab1.huntList.get(pos).getName();
+                    final String name = Tab1.huntList.get(pos);
                     /*** Check if there is already a hunt with this name ***/
                     myFirebaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -131,6 +126,17 @@ public class HuntItems extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
+            }
+        });
+
+        Button delete = (Button) findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Tab1.myHuntDB.deleteHunt(Tab1.huntList.get(pos));
+                Tab1.myDB.deleteHunt(Tab1.huntList.get(pos));
+                Tab1.myImgDB.deleteHunt(Tab1.huntList.get(pos));
+                finish();
             }
         });
     }

@@ -2,7 +2,6 @@ package rbh9dm.cs4720.com.scavengerhunt;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -79,7 +77,7 @@ public class Add_Hunt_Item extends AppCompatActivity {
                 EditText locationField = (EditText) findViewById(R.id.searchLoc);
                 //nameOfLocation = ""+locationField.getText();
                 //String newName = nameOfLocation.replaceAll(" ", "%20");
-                String newName = (""+ locationField.getText()).replaceAll(" ", "%20");;
+                String newName = (""+ locationField.getText()).replaceAll(" ", "%20");
                 String url = "http://maps.google.com/maps/api/geocode/json?address="+newName+"&sensor=false";
                 new DataLongOperationAsynchTask(getApplicationContext()).execute(url);
             }
@@ -91,7 +89,7 @@ public class Add_Hunt_Item extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText locationField = (EditText) findViewById(R.id.searchLoc);
+                //EditText locationField = (EditText) findViewById(R.id.searchLoc);
                 //nameOfLocation = ""+locationField.getText();
                 EditText nameField = (EditText) findViewById(R.id.nameHuntItem);
                 String name = ""+nameField.getText();

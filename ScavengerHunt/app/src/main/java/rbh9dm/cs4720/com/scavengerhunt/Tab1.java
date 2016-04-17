@@ -1,8 +1,6 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
-/**
- * Created by Student User on 3/30/2016.
- */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,19 +12,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 
 import java.util.ArrayList;
 
-/**
- * Created by hp1 on 21-01-2015.
- */
 
 public class Tab1 extends Fragment {
 
-    public static ArrayList<ScavengerHunt> huntList = new ArrayList<ScavengerHunt>();
-    public static ArrayAdapter<ScavengerHunt> huntsAdapter;
+    public static ArrayList<String> huntList = new ArrayList<>();
+    public static ArrayAdapter<String> huntsAdapter;
+    public static ListView listView;
     public static final String ID = "id";
     public static ScavengerHuntDBHelper myDB;
     public static HuntItemDBHelper myHuntDB;
@@ -41,9 +36,9 @@ public class Tab1 extends Fragment {
         myHuntDB = new HuntItemDBHelper(getActivity());
         myImgDB = new MoreInfoDBHelper(getActivity());
         huntList = myDB.getAllHunts();
-        huntsAdapter = new ArrayAdapter<ScavengerHunt>(getActivity(), android.R.layout.simple_list_item_1, huntList);
+        huntsAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, huntList);
 
-        ListView listView = (ListView) v.findViewById(R.id.listview);
+        listView = (ListView) v.findViewById(R.id.listview);
         listView.setAdapter(huntsAdapter);
 
         /*** Navigate to hunt items screen on click ***/

@@ -1,23 +1,17 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ListView;
 import android.widget.Toast;
-
 import com.google.android.gms.maps.model.LatLng;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
 import javax.net.ssl.HttpsURLConnection;
 
 public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[]> {
@@ -49,7 +43,7 @@ public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[
             JSONArray jsonResult = jsonObj.getJSONArray("results");
             for (int j = 0; j < jsonResult.length(); j++){
                 JSONObject jsonObject = jsonResult.getJSONObject(j);
-                String address = "";
+                String address;
                 JSONArray addresses = jsonObject.getJSONArray("address_components");
                 String output = (addresses.getJSONObject(0).getJSONArray("types").getString(0).substring(0, 1).toUpperCase()
                         + addresses.getJSONObject(0).getJSONArray("types").getString(0).substring(1)).replaceAll("_", " ");

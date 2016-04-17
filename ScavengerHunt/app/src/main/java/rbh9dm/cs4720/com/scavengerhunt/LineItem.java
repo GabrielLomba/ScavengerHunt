@@ -1,8 +1,6 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
-/**
- * Created by Student User on 3/23/2016.
- */
+
 public class LineItem {
     private String name;
     private String description;
@@ -31,29 +29,14 @@ public class LineItem {
     public LineItem(String name, String description, int pictureRequired, int locationRequired, int pictureOk, int locationOk, String nameOfLocation, double latitude, double longitude, int complete) {
         this.name = name;
         this.description = description;
-        if(pictureRequired == 0)
-            this.pictureRequired = false;
-        else
-            this.pictureRequired = true;
-        if(locationRequired == 0)
-            this.locationRequired = false;
-        else
-            this.locationRequired = true;
-        if(pictureOk == 0)
-            this.pictureOk = false;
-        else
-            this.pictureOk = true;
-        if(locationOk == 0)
-            this.locationOk = false;
-        else
-            this.locationOk = true;
+        this.pictureRequired = (pictureRequired == 1);
+        this.locationRequired = (locationRequired == 1);
+        this.pictureOk = (pictureOk == 1);
+        this.locationOk = (locationOk == 1);
         this.nameOfLocation = nameOfLocation;
         this.latitude = latitude;
         this.longitude = longitude;
-        if(complete == 0)
-            this.complete = false;
-        else
-            this.complete = true;
+        this.complete = (complete == 1);
     }
 
     public String getName() {

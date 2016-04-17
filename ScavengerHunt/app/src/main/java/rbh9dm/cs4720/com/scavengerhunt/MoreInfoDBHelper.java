@@ -10,12 +10,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
 
-/**
- * Created by Student User on 4/13/2016.
- */
+
 public class MoreInfoDBHelper  extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "MoreInfo.db";
     public static final String ITEMS_TABLE_NAME = "pics";
@@ -23,7 +19,6 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
     public static final String ITEMS_COLUMN_NAME = "name";
     public static final String ITEMS_COLUMN_PIC = "pic";
 
-    private HashMap hp;
 
     public MoreInfoDBHelper(Context context)
     {
@@ -66,14 +61,12 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
 
     public Cursor getData(String nameOfHunt){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from pics where nameOfHunt="+nameOfHunt+"", null );
-        return res;
+        return db.rawQuery( "select * from pics where nameOfHunt="+nameOfHunt+"", null );
     }
 
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, ITEMS_TABLE_NAME);
-        return numRows;
+        return (int) DatabaseUtils.queryNumEntries(db, ITEMS_TABLE_NAME);
     }
 
     public boolean updateHunt (String nameOfHunt, String name, Bitmap pic)
@@ -83,7 +76,7 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_NAME, name);
         byte[] data = getBitmapAsByteArray(pic);
         contentValues.put(ITEMS_COLUMN_PIC, data);
-        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ?", new String[] { nameOfHunt, name } );
+        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ?", new String[]{nameOfHunt, name});
         return true;
     }
 
@@ -92,23 +85,28 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from pics where nameOfHunt= ? and name = ?", new String[] { nameOfHunt, name });
         res.moveToFirst();
-        if(!res.isAfterLast())
+        if(!res.isAfterLast()) {
+            res.close();
             return true;
-        return false;
+        }
+        else {
+            res.close();
+            return false;
+        }
     }
 
-    public Integer deleteHunt (String nameOfHunt, String name)
+    public Integer deleteHunt (String nameOfHunt)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete("pics",
-                "id = ? ",
+                "nameOfHunt = ? ",
                 new String[] { nameOfHunt });
     }
 
 
     public Bitmap getImage(String nameOfHunt, String nameTask)
     {
-        byte[] data = null;
+        byte[] data;
         Bitmap img = null;
 
         //hp = new HashMap();
@@ -121,6 +119,9 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
             BitmapFactory.Options options = new BitmapFactory.Options();
             img = BitmapFactory.decodeByteArray(data, 0, data.length, options);
         }
+
+        res.close();
+
         return img;
     }
 

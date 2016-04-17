@@ -1,30 +1,11 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
-/**
- * Created by Student User on 3/30/2016.
- */
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-import javax.net.ssl.HttpsURLConnection;
-
-/**
- * Created by hp1 on 21-01-2015.
- */
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
@@ -46,13 +27,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         if(position == 0) // if the position is 0 we are returning the First tab
         {
-            Tab1 tab1 = new Tab1();
-            return tab1;
+            return new Tab1();
         }
         else             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
-            Tab2 tab2 = new Tab2();
-            return tab2;
+            return new Tab2();
         }
 
 

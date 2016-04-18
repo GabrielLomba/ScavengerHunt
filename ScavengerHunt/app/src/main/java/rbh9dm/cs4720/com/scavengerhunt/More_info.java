@@ -25,6 +25,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.net.URI;
@@ -134,7 +135,7 @@ public class More_info extends AppCompatActivity {
 
                 // Display Distance
                 TextView distText = (TextView) findViewById(R.id.distance);
-                distText.setText("Distance: "+distance);
+                distText.setText("Distance: "+distance+" meters");
 
                 // Adjust if appropriate
                 if (distance < 1000 && !locOk) {
@@ -193,12 +194,22 @@ public class More_info extends AppCompatActivity {
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // create Intent to take a picture and return control to the
-                // calling application Intent
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enable the camera.";
+                    int duration = Toast.LENGTH_LONG;
 
-                // start the image capture Intent
-                startActivityForResult(intent, 0);
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else {
+                    // create Intent to take a picture and return control to the
+                    // calling application Intent
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                    // start the image capture Intent
+                    startActivityForResult(intent, 0);
+                }
 
             }
         });

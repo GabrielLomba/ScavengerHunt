@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Distance:"
+        android:text="Distance: Calculating..."
         android:id="@+id/distance"
         android:layout_above="@+id/location"
         android:layout_centerHorizontal="true" />

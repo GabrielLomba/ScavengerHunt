@@ -128,7 +128,7 @@ public class HuntItems extends AppCompatActivity {
                 }
             }
         });
-
+        /*
         Button delete = (Button) findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +139,7 @@ public class HuntItems extends AppCompatActivity {
                 finish();
             }
         });
+        */
     }
 
 }

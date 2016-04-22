@@ -138,7 +138,7 @@ public class More_info extends AppCompatActivity {
                 distText.setText("Distance: "+distance+" meters");
 
                 // Adjust if appropriate
-                if (distance < 1000 && !locOk) {
+                if (distance < 10000 && !locOk) {
                     TextView Mloc = (TextView) findViewById(R.id.Mlocation);
                     Mloc.setTextColor(Color.parseColor("#00ff00"));
                     locOk = true;
@@ -164,7 +164,7 @@ public class More_info extends AppCompatActivity {
             public void onProviderDisabled(String provider) {}
         };
 
-        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             TextView distText = (TextView) findViewById(R.id.distance);
             distText.setText("Distance: GPS not enabled");
         }
@@ -214,7 +214,35 @@ public class More_info extends AppCompatActivity {
             }
         });
 
+        /************* Set up delete button ***************/
+        Button deleteTask = (Button) findViewById(R.id.deleteTask);
+        deleteTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Tab1.myHuntDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
+                Tab1.myImgDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
 
+                HuntItems.itemList.remove(pos);
+                HuntItems.itemAdapter.notifyDataSetChanged();
+
+                finish();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        }
+        else {
+            if (locationManager != null) {
+                try {
+                    locationManager.removeUpdates(locationListener);
+                } catch(IllegalArgumentException e) {}
+            }
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

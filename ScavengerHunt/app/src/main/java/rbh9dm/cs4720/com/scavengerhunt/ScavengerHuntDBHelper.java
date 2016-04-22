@@ -59,13 +59,19 @@ public class ScavengerHuntDBHelper extends SQLiteOpenHelper {
         return (int) DatabaseUtils.queryNumEntries(db, HUNTS_TABLE_NAME);
     }
 
-    public boolean updateHunt (String name, boolean done)
+    public boolean updateHunt (String previous, String newName)
     {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select done from hunts where name = ? ", new String[] { previous } );
+        res.moveToFirst();
+        boolean done = res.getString(res.getColumnIndex(HUNTS_COLUMN_DONE)).equals("true");
+        res.close();
+        db.close();
+        SQLiteDatabase db2 = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(HUNTS_COLUMN_NAME, name);
+        contentValues.put(HUNTS_COLUMN_NAME, newName);
         contentValues.put(HUNTS_COLUMN_DONE, done);
-        db.update(HUNTS_TABLE_NAME, contentValues, "name = ? ", new String[] { name } );
+        db2.update(HUNTS_TABLE_NAME, contentValues, "name = ? ", new String[] { previous } );
         return true;
     }
 

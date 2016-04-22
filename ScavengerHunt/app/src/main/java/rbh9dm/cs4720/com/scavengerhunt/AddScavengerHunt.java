@@ -1,6 +1,7 @@
 package rbh9dm.cs4720.com.scavengerhunt;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,14 @@ public class AddScavengerHunt extends AppCompatActivity {
         /*** Set up toolbar ***/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Add a Scavenger Hunt");
+        Intent intent = getIntent();
+        if(intent.hasExtra("name")){
+            EditText name = (EditText) findViewById(R.id.editText);
+            name.setText(intent.getStringExtra("name"));
+            getSupportActionBar().setTitle("Edit the Scavenger Hunt");
+        }
+        else
+            getSupportActionBar().setTitle("Add a Scavenger Hunt");
 
         /*** Set up FAB ***/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -48,12 +56,23 @@ public class AddScavengerHunt extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
-                /*** Add otherwise ***/
+                /*** Add/edit otherwise ***/
                 else {
-                    Tab1.myDB.insertHunt(name, false);
-                    Tab1.huntList.add(name);
-                    Tab1.huntsAdapter.notifyDataSetChanged();
-
+                    Intent intent = getIntent();
+                    if(intent.hasExtra("name")){
+                        Tab1.myDB.updateHunt(intent.getStringExtra("name"), name);
+                        Tab1.myHuntDB.updateHunt(intent.getStringExtra("name"), name);
+                        Tab1.myImgDB.updateName(intent.getStringExtra("name"), name);
+                        int index = Tab1.huntList.indexOf(intent.getStringExtra("name"));
+                        Tab1.huntList.remove(intent.getStringExtra("name"));
+                        Tab1.huntList.add(index, name);
+                        Tab1.huntsAdapter.notifyDataSetChanged();
+                    }
+                    else {
+                        Tab1.myDB.insertHunt(name, false);
+                        Tab1.huntList.add(name);
+                        Tab1.huntsAdapter.notifyDataSetChanged();
+                    }
                     finish();
                 }
             }

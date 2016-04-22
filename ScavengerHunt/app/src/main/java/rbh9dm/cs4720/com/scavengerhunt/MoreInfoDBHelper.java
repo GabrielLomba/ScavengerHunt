@@ -80,6 +80,15 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean updateName(String previousName, String newName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ITEMS_COLUMN_NAMEOFHUNT, newName);
+
+        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { previousName } );
+        return true;
+    }
+
     public boolean exists (String nameOfHunt, String name)
     {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -101,6 +110,14 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
         return db.delete("pics",
                 "nameOfHunt = ? ",
                 new String[] { nameOfHunt });
+    }
+
+    public Integer deleteHunt (String nameOfHunt, String nameOfTask)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("pics",
+                "nameOfHunt = ? AND name = ? ",
+                new String[] { nameOfHunt, nameOfTask });
     }
 
 

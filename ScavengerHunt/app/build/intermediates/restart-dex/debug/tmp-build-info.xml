@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="23"
+    density="xhdpi"
+    format="7"
+    timestamp="653026483241943" >
+
+    <task
+        name="javac"
+        duration="9425" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="10282" />
+    <task
+        name="verifier"
+        duration="1768" />
+
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.4.0_6e93ab9b0297b9cf5ed41c13bfe992236b6c298c\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_d9be0cfb8605f254cba617b8e0ac467a94be863f\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-8.4.0_40454f4e73046f33377dd95a2067c3e0eead2bc0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_8681585fc83b35fb431e5492417e49f78dc87f4a\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9fae56b437a556b95fea171b6db44827f443661d\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\firebase-client-android-2.5.2_25d63464925a759207951d6477d8990f285b7af5\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_1eb1f019c666f3e1e4ab7bb8ea35ece08ffe49d4\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\firebase-client-jvm-2.5.2_d6f57f9c931cb559bfd19a30621771b01a1f11ee\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\tubesock-0.0.12_d252ba906a743cf7a5012ff4c4e6e5c45e745cef\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_e80e2c7c3c17362cecb687c31d78194254bca078\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.2.2_2c3a4f3c3f998a15472fa9ff8c4ee04d95064ca0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_66e753f80324652a746764e6f65e6b6d62610904\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.2.2_12d3ac1682d9912be16fb2022f55aa04ba725f10\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_49c4cefd16f42a33e92c5abb26c27af7edcc0748\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_b59d02c0b1c18e57af74558397ff520e310a0bb6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_5c26008710704ff85eb7e2088cb75e4946b88cda\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.2.2_a26dd2695449c399f4a68ab2980931547340d2fa\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+        type="DEX" />
+
+</instant-run>

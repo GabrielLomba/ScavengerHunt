@@ -20,8 +20,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Share Online"
-            android:id="@+id/share"
+            android:text="Edit Hunt"
+            android:id="@+id/editHunt"
             android:layout_weight="0.48"
             android:layout_marginLeft="10dp" />
 

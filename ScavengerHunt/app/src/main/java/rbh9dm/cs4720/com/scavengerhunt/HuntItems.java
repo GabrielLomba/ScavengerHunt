@@ -33,12 +33,6 @@ public class HuntItems extends AppCompatActivity {
         /*** Firebase ***/
         Firebase.setAndroidContext(this);
 
-        /*** Toolbar ***/
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        Intent intent = getIntent();
-        pos = intent.getIntExtra(Tab1.ID, 0);
-        getSupportActionBar().setTitle(Tab1.huntList.get(pos));
 
         /*** Load items ***/
         itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos));
@@ -73,6 +67,16 @@ public class HuntItems extends AppCompatActivity {
             }
         });
 
+
+        Button edit = (Button) findViewById(R.id.editHunt);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HuntItems.this, AddScavengerHunt.class);
+                intent.putExtra("name", Tab1.huntList.get(pos));
+                startActivity(intent);
+            }});
+
         /*** Share button ***/
         Button share = (Button) findViewById(R.id.share);
         share.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +84,8 @@ public class HuntItems extends AppCompatActivity {
             public void onClick(View view) {
                 /*** Only share if at least one task ***/
                 if (itemList.size() > 0) {
-                    Intent intent = getIntent();
-                    int pos = intent.getIntExtra(Tab1.ID, 0);
+                    //   Intent intent = getIntent();
+                    //  int pos = intent.getIntExtra(Tab1.ID, 0);
                     Firebase myFirebaseRef = new Firebase("https://cs4720scavhunt.firebaseio.com/hunts");
                     final String name = Tab1.huntList.get(pos);
                     /*** Check if there is already a hunt with this name ***/
@@ -103,7 +107,7 @@ public class HuntItems extends AppCompatActivity {
                                 thisHunt.setValue(itemList);
 
                                 Context context = getApplicationContext();
-                                CharSequence text = "Scavenger Hunt added!";
+                                CharSequence text = "Scavenger Hunt shared!";
                                 int duration = Toast.LENGTH_SHORT;
 
                                 Toast toast = Toast.makeText(context, text, duration);
@@ -128,18 +132,30 @@ public class HuntItems extends AppCompatActivity {
                 }
             }
         });
-        /*
+
         Button delete = (Button) findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Tab1.myHuntDB.deleteHunt(Tab1.huntList.get(pos));
-                Tab1.myDB.deleteHunt(Tab1.huntList.get(pos));
                 Tab1.myImgDB.deleteHunt(Tab1.huntList.get(pos));
+                Tab1.myDB.deleteHunt(Tab1.huntList.get(pos));
+
                 finish();
             }
         });
-        */
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        /*** Toolbar ***/
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        Intent intent = getIntent();
+        pos = intent.getIntExtra(Tab1.ID, 0);
+        getSupportActionBar().setTitle(Tab1.huntList.get(pos));
     }
 
 }

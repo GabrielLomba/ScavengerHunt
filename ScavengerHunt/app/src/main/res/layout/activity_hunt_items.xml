@@ -23,6 +23,21 @@
 
     <include layout="@layout/content_hunt_items" />
 
+    <!--Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Hunt"
+        android:id="@+id/delete"
+        android:textColor="#eb0f0f"
+        android:layout_above/-->
+    <Button
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="@dimen/fab_margin"
+        android:text="Share Online" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

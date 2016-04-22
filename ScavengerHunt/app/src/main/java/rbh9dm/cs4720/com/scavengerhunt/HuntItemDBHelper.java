@@ -81,23 +81,13 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         return (int) DatabaseUtils.queryNumEntries(db, ITEMS_TABLE_NAME);
     }
 
-    public boolean updateHunt (String nameOfHunt, String name, String description, boolean picReq, boolean locReq, boolean picOk, boolean locOk, String nameOfLocation, double latitude, double longitude, boolean complete)
+    public boolean updateHunt (String previousName, String newName)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ITEMS_COLUMN_NAMEOFHUNT, nameOfHunt);
-        contentValues.put(ITEMS_COLUMN_NAME, name);
-        contentValues.put(ITEMS_COLUMN_DESCRIPTION, description);
-        contentValues.put(ITEMS_COLUMN_PICREQ, picReq);
-        contentValues.put(ITEMS_COLUMN_LOCREQ, locReq);
-        contentValues.put(ITEMS_COLUMN_PICOK, picOk);
-        contentValues.put(ITEMS_COLUMN_LOCOK, locOk);
-        contentValues.put(ITEMS_COLUMN_NAMEOFLOCATION, nameOfLocation);
-        contentValues.put(ITEMS_COLUMN_LATITUDE, latitude);
-        contentValues.put(ITEMS_COLUMN_LONGITUDE, longitude);
-        contentValues.put(ITEMS_COLUMN_COMPLETE, complete);
+        contentValues.put(ITEMS_COLUMN_NAMEOFHUNT, newName);
 
-        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { nameOfHunt } );
+        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { previousName } );
         return true;
     }
 
@@ -135,12 +125,21 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ?", new String[] { nameOfHunt, name } );
         return true;
     }
+
     public Integer deleteHunt (String nameOfHunt)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete("items2",
-                "nameOfHunt = ? ",
-                new String[] { nameOfHunt });
+                "nameOfHunt = ?",
+                new String[] { nameOfHunt});
+    }
+
+    public Integer deleteHunt (String nameOfHunt, String nameOfTask)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("items2",
+                "nameOfHunt = ? AND name = ?",
+                new String[] { nameOfHunt, nameOfTask });
     }
 
     public boolean exists (String nameOfHunt, String name)

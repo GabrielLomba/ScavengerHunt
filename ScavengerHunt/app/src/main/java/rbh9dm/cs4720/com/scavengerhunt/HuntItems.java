@@ -30,13 +30,15 @@ public class HuntItems extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hunt_items);
 
+        Intent intent = getIntent();
+        pos = intent.getIntExtra(Tab1.ID, 0);
+
         /*** Firebase ***/
         Firebase.setAndroidContext(this);
 
 
         /*** Load items ***/
         itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos));
-        //Log.i("look look look", "This is the length of me list: " + itemList.size());
 
         ListView listView = (ListView)findViewById(R.id.listview2);
         itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
@@ -153,8 +155,6 @@ public class HuntItems extends AppCompatActivity {
         /*** Toolbar ***/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Intent intent = getIntent();
-        pos = intent.getIntExtra(Tab1.ID, 0);
         getSupportActionBar().setTitle(Tab1.huntList.get(pos));
     }
 

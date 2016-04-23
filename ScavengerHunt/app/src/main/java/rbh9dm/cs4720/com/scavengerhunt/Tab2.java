@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 import java.util.ArrayList;
 
@@ -22,14 +23,23 @@ public class Tab2 extends Fragment {
     public static ArrayAdapter<String> huntsAdapter;
     public static final String TITLE = "title";
 
+
+    public static Firebase ref;
+    public static Query qref;
+    public static ValueEventListener listener;
+    public static int numToShow;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tab_2,container,false);
 
         huntsAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, huntList);
 
+        numToShow = 5;
         Firebase.setAndroidContext(getActivity());
-        Firebase ref = new Firebase("https://cs4720scavhunt.firebaseio.com/");
+        Firebase ref = new Firebase("https://cs4720scavhunt.firebaseio.com/hunts");
+        qref = ref.limitToLast(numToShow);
 
 
         ListView listView = (ListView) v.findViewById(R.id.listview);
@@ -44,10 +54,9 @@ public class Tab2 extends Fragment {
             }
         });
 
-        ref.addValueEventListener(new ValueEventListener() {
+        qref.addValueEventListener( listener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                dataSnapshot = dataSnapshot.child("hunts");
                 huntList.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     huntList.add(child.getKey());
@@ -60,15 +69,6 @@ public class Tab2 extends Fragment {
 
             }
         });
-        /*FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //Intent intent = new Intent(getActivity(), AddScavengerHunt.class);
-                //startActivity(intent);
-            }
-        });*/
 
         return v;
 

@@ -2468,9 +2468,11 @@ containing a value of this type.
         public static final int google_maps_icon=0x7f020072;
         public static final int ic_add_white_18dp=0x7f020073;
         public static final int ic_done_white_18dp=0x7f020074;
-        public static final int ic_search_black_24dp=0x7f020075;
-        public static final int ic_search_white_24dp=0x7f020076;
-        public static final int notification_template_icon_bg=0x7f020077;
+        public static final int ic_expand_more_white_18dp=0x7f020075;
+        public static final int ic_expand_more_white_24dp=0x7f020076;
+        public static final int ic_search_black_24dp=0x7f020077;
+        public static final int ic_search_white_24dp=0x7f020078;
+        public static final int notification_template_icon_bg=0x7f020079;
     }
     public static final class id {
         public static final int Mdescription=0x7f0c0089;

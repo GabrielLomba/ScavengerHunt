@@ -80,6 +80,10 @@
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\src\\main\\res\\drawable\\google_maps_icon.jpg"
     },
     {
+        "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_expand_more_white_18dp.png",
+        "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\src\\main\\res\\drawable\\ic_expand_more_white_18dp.png"
+    },
+    {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
@@ -90,6 +94,10 @@
     {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_expand_more_white_24dp.png",
+        "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\src\\main\\res\\drawable\\ic_expand_more_white_24dp.png"
     },
     {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_dark.xml",

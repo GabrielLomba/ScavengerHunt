@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
         "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\Student User\\Documents\\GitHub\\scavhunt2\\ScavengerHunt\\ScavengerHunt\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_add_scavenger_hunt.xml",

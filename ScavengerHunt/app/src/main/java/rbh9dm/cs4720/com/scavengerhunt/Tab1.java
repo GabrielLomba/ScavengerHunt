@@ -53,19 +53,6 @@ public class Tab1 extends Fragment {
                 startActivity(intent);
             }
         });
-        
-        /*** Add FAB ***/
-        //FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
-        FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(getActivity(), AddScavengerHunt.class);
-                //Intent intent = new Intent(getActivity(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         return v;
     }

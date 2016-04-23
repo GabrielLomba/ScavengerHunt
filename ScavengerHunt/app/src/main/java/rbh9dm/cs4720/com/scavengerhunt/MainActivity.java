@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
          // Assigning ViewPager View and setting the adapter
          pager = (ViewPager) findViewById(R.id.pager);
          pager.setAdapter(adapter);
-        //pager.addOnPageChangeListener(new InternalViewPagerListener());
+        pager.addOnPageChangeListener(new InternalViewPagerListener());
 
          // Assiging the Sliding Tab Layout View
          tabs = (SlidingTabLayout) findViewById(R.id.tabs);

@@ -333,6 +333,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_add__hunt__item">Add_Hunt_Item</string>
     <string name="title_activity_add_scavenger_hunt">AddScavengerHunt</string>
+    <string name="title_activity_edit_item">EditItem</string>
     <string name="title_activity_hunt_download">huntDownload</string>
     <string name="title_activity_hunt_items">HuntItems</string>
     <string name="title_activity_maps">Map</string>

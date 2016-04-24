@@ -57,7 +57,7 @@ public class HuntDownload extends AppCompatActivity {
                         for (DataSnapshot task : child.getChildren()) {
                             read = (Map<String, String>) task.getValue();
                             for (Map.Entry<String, String> entry : read.entrySet()) {
-                                switch (entry.getKey()){
+                                switch (entry.getKey()) {
                                     case "name":
                                         name = entry.getValue();
                                         break;
@@ -82,10 +82,13 @@ public class HuntDownload extends AppCompatActivity {
                                 }
                             }
 
-                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, false, false, nameOfLocation, (double)latitude, (double)longitude, false));
+                            itemList.add(new LineItem(name, description, (boolean) picReq, (boolean) locReq, false, false, nameOfLocation, (double) latitude, (double) longitude, false));
                         }
                     }
                 }
+                ListView listView = (ListView) findViewById(R.id.downloadList);
+                itemAdapter = new ArrayAdapter<>(HuntDownload.this, android.R.layout.simple_list_item_1, itemList);
+                listView.setAdapter(itemAdapter);
             }
 
             @Override
@@ -93,9 +96,6 @@ public class HuntDownload extends AppCompatActivity {
 
             }
         });
-        ListView listView = (ListView) findViewById(R.id.downloadList);
-        itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
-        listView.setAdapter(itemAdapter);
 
         /*** Download button ***/
         Button download = (Button) findViewById(R.id.download);

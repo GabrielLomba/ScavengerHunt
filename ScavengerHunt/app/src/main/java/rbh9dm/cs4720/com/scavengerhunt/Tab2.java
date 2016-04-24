@@ -38,7 +38,7 @@ public class Tab2 extends Fragment {
 
         numToShow = 5;
         Firebase.setAndroidContext(getActivity());
-        Firebase ref = new Firebase("https://cs4720scavhunt.firebaseio.com/hunts");
+        ref = new Firebase("https://cs4720scavhunt.firebaseio.com/hunts");
         qref = ref.limitToLast(numToShow);
 
 

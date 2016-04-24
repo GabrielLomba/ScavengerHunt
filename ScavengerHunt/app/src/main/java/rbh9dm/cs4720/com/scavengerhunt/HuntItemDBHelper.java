@@ -91,6 +91,17 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean updateItem (String nameOfHunt, String previousName, String newName, String newDescription)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ITEMS_COLUMN_NAME, newName);
+        contentValues.put(ITEMS_COLUMN_DESCRIPTION, newDescription);
+
+        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ? ", new String[] { nameOfHunt, previousName } );
+        return true;
+    }
+
     public boolean updatePicOk (String nameOfHunt, String name, boolean picOk)
     {
         SQLiteDatabase db = this.getWritableDatabase();

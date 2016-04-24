@@ -61,7 +61,7 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
 
     public Cursor getData(String nameOfHunt){
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery( "select * from pics where nameOfHunt="+nameOfHunt+"", null );
+        return db.rawQuery("select * from pics where nameOfHunt=" + nameOfHunt + "", null);
     }
 
     public int numberOfRows(){
@@ -86,6 +86,15 @@ public class MoreInfoDBHelper  extends SQLiteOpenHelper {
         contentValues.put(ITEMS_COLUMN_NAMEOFHUNT, newName);
 
         db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? ", new String[] { previousName } );
+        return true;
+    }
+
+    public boolean updateItem(String nameOfHunt, String previousName, String newName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ITEMS_COLUMN_NAME, newName);
+
+        db.update(ITEMS_TABLE_NAME, contentValues, "nameOfHunt = ? and name = ? ", new String[] { nameOfHunt, previousName } );
         return true;
     }
 

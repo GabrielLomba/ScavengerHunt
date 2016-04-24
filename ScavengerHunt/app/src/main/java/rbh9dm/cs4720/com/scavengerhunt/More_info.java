@@ -59,14 +59,66 @@ public class More_info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_info);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
         pos = intent.getIntExtra(HuntItems.POSITION, 0);
         nameOfHunt = intent.getStringExtra("nameOfHunt");
 
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        }
+        else {
+            if (locationManager != null) {
+                try {
+                    locationManager.removeUpdates(locationListener);
+                } catch(IllegalArgumentException e) {}
+            }
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        Bundle extras = data.getExtras();
+        if (extras != null) {
+            Bitmap bp = (Bitmap) extras.get("data");
+            if (Tab1.myImgDB.exists(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName()))
+                Tab1.myImgDB.updateHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
+            else
+                Tab1.myImgDB.insertHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
+            iv.setImageBitmap(bp);
+
+            if (!picOk) {
+                TextView Mpic = (TextView) findViewById(R.id.Mpic);
+                Mpic.setTextColor(Color.parseColor("#00ff00"));
+                picOk = true;
+
+                // Adjust hunt item in list
+                HuntItems.itemList.get(pos).setPictureOk(true);
+                HuntItems.itemAdapter.notifyDataSetChanged();
+
+                // Update DB
+                Tab1.myHuntDB.updatePicOk(nameOfHunt, HuntItems.itemList.get(pos).getName(), true);
+
+                // Enable Checkbox?
+                // Enable check box?
+                if (!(locReq && !locOk))
+                    chk.setEnabled(true);
+            }
+        }
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(HuntItems.itemList.get(pos).getName());
 
         /************ Set description text ****************/
@@ -214,6 +266,18 @@ public class More_info extends AppCompatActivity {
             }
         });
 
+        /************* Set up edit button ***************/
+        Button editTask = (Button) findViewById(R.id.editTask);
+        editTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(More_info.this, EditItem.class);
+                intent.putExtra("position", pos);
+                intent.putExtra("nameOfHunt", nameOfHunt);
+                startActivity(intent);
+            }
+        });
+
         /************* Set up delete button ***************/
         Button deleteTask = (Button) findViewById(R.id.deleteTask);
         deleteTask.setOnClickListener(new View.OnClickListener() {
@@ -228,53 +292,5 @@ public class More_info extends AppCompatActivity {
                 finish();
             }
         });
-
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-        }
-        else {
-            if (locationManager != null) {
-                try {
-                    locationManager.removeUpdates(locationListener);
-                } catch(IllegalArgumentException e) {}
-            }
-        }
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
-        super.onActivityResult(requestCode, resultCode, data);
-        Bundle extras = data.getExtras();
-        if (extras != null) {
-            Bitmap bp = (Bitmap) extras.get("data");
-            if (Tab1.myImgDB.exists(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName()))
-                Tab1.myImgDB.updateHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
-            else
-                Tab1.myImgDB.insertHunt(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName(), bp);
-            iv.setImageBitmap(bp);
-
-            if (!picOk) {
-                TextView Mpic = (TextView) findViewById(R.id.Mpic);
-                Mpic.setTextColor(Color.parseColor("#00ff00"));
-                picOk = true;
-
-                // Adjust hunt item in list
-                HuntItems.itemList.get(pos).setPictureOk(true);
-                HuntItems.itemAdapter.notifyDataSetChanged();
-
-                // Update DB
-                Tab1.myHuntDB.updatePicOk(nameOfHunt, HuntItems.itemList.get(pos).getName(), true);
-
-                // Enable Checkbox?
-                // Enable check box?
-                if (!(locReq && !locOk))
-                    chk.setEnabled(true);
-            }
-        }
-    }
-
 }

@@ -97,6 +97,7 @@
                 android:layout_alignBottom="@+id/editTask"
                 android:layout_alignParentEnd="true"
                 android:textColor="#FFFF0000" />
+
         </RelativeLayout>
 
     </LinearLayout>

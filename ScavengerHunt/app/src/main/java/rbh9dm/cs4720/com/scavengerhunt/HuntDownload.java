@@ -118,6 +118,7 @@ public class HuntDownload extends AppCompatActivity {
                 }
                 Tab1.myDB.insertHunt(selected, false);
                 Tab1.huntList.add(selected);
+                Tab1.huntDoneList.add("Incomplete");
                 Tab1.huntsAdapter.notifyDataSetChanged();
 
                 Context context = getApplicationContext();

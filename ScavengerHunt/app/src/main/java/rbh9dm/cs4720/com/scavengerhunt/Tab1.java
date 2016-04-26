@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class Tab1 extends Fragment {
 
     public static ArrayList<String> huntList = new ArrayList<>();
+    public static ArrayList<String> huntDoneList = new ArrayList<>();
     public static ArrayAdapter<String> huntsAdapter;
     public static ListView listView;
     public static final String ID = "id";
@@ -36,7 +38,20 @@ public class Tab1 extends Fragment {
         myHuntDB = new HuntItemDBHelper(getActivity());
         myImgDB = new MoreInfoDBHelper(getActivity());
         huntList = myDB.getAllHunts();
-        huntsAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, huntList);
+        huntDoneList = myDB.getAllDoneVals();
+        //huntsAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, huntList);
+        huntsAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, huntList) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                text1.setText(huntList.get(position));
+                text2.setText(huntDoneList.get(position));
+                return view;
+            }
+        };
 
         listView = (ListView) v.findViewById(R.id.listview);
         listView.setAdapter(huntsAdapter);

@@ -147,8 +147,20 @@ public class More_info extends AppCompatActivity {
                 HuntItems.itemList.get(pos).setComplete(isChecked);
                 HuntItems.itemAdapter.notifyDataSetChanged();
 
-                // Update DB
+                // Update Task DB
                 Tab1.myHuntDB.updateComplete(nameOfHunt, HuntItems.itemList.get(pos).getName(), isChecked);
+
+                // Update Hunt and Hunt DB
+                boolean allDone = true;
+                int n = HuntItems.itemList.size();
+                for (int i = 0; i < n; i++) {
+                    if(!HuntItems.itemList.get(i).isComplete()) {
+                        allDone = false;
+                    }
+                }
+                Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), allDone ? "Complete" : "Incomplete");
+                Tab1.myDB.updateDone(nameOfHunt, allDone);
+                Tab1.huntsAdapter.notifyDataSetChanged();
             }
         });
 
@@ -286,7 +298,28 @@ public class More_info extends AppCompatActivity {
                 Tab1.myHuntDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
                 Tab1.myImgDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
 
+                boolean mayHaveChanged = !HuntItems.itemList.get(pos).isComplete() || HuntItems.itemList.size() == 1;
+
                 HuntItems.itemList.remove(pos);
+
+                if (mayHaveChanged) {
+                    boolean allDone = HuntItems.itemList.size() > 0;
+                    int n = HuntItems.itemList.size();
+                    for(int i = 0; i < n; i++) {
+                        if ( !HuntItems.itemList.get(i).isComplete() ) { allDone = false; }
+                    }
+                    if (allDone ) {
+                        Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), "Complete");
+                        Tab1.myDB.updateDone(nameOfHunt, allDone);
+                        Tab1.huntsAdapter.notifyDataSetChanged();
+                    }
+                    else if (HuntItems.itemList.size() == 0) {
+                        Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), "Incomplete");
+                        Tab1.myDB.updateDone(nameOfHunt, allDone);
+                        Tab1.huntsAdapter.notifyDataSetChanged();
+                    }
+                }
+
                 HuntItems.itemAdapter.notifyDataSetChanged();
 
                 finish();

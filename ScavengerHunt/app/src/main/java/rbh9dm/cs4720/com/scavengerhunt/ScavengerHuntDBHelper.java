@@ -75,6 +75,15 @@ public class ScavengerHuntDBHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean updateDone(String name, boolean done) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(HUNTS_COLUMN_DONE, done);
+        db.update(HUNTS_TABLE_NAME, contentValues, "name = ? ", new String[] { name } );
+        return true;
+    }
+
     public boolean exists (String name)
     {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -90,6 +99,7 @@ public class ScavengerHuntDBHelper extends SQLiteOpenHelper {
         db.delete("hunts",
                 "name = ? ",
                 new String[] { name });
+        Tab1.huntDoneList.remove(Tab1.huntList.indexOf(name));
         Tab1.huntList.remove(name);
         Tab1.huntsAdapter.notifyDataSetChanged();
     }
@@ -104,6 +114,24 @@ public class ScavengerHuntDBHelper extends SQLiteOpenHelper {
 
         while(!res.isAfterLast()){
             array_list.add(res.getString(res.getColumnIndex(HUNTS_COLUMN_NAME)));
+            res.moveToNext();
+        }
+
+        db.close();
+        res.close();
+        return array_list;
+    }
+
+    public ArrayList<String> getAllDoneVals()
+    {
+        ArrayList<String> array_list = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from hunts", null );
+        res.moveToFirst();
+
+        while(!res.isAfterLast()){
+            array_list.add(res.getString(res.getColumnIndex(HUNTS_COLUMN_DONE)).equals("1") ? "Complete" : "Incomplete");
             res.moveToNext();
         }
 

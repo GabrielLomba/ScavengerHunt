@@ -7,10 +7,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -41,7 +43,19 @@ public class HuntItems extends AppCompatActivity {
         itemList = Tab1.myHuntDB.getAllItems(Tab1.huntList.get(pos));
 
         ListView listView = (ListView)findViewById(R.id.listview2);
-        itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
+        //itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
+        itemAdapter = new ArrayAdapter<LineItem>(this, android.R.layout.simple_list_item_2, android.R.id.text1, itemList) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                text1.setText(itemList.get(position).toString());
+                text2.setText(itemList.get(position).isComplete() ? "Complete" : "Incomplete");
+                return view;
+            }
+        };
         listView.setAdapter(itemAdapter);
 
         /*** Navigate to more info screen ***/

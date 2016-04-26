@@ -140,6 +140,10 @@ public class Add_Hunt_Item extends AppCompatActivity {
 
                     HuntItems.itemAdapter.notifyDataSetChanged();
 
+                    Tab1.huntDoneList.set(Tab1.huntList.indexOf(intent.getStringExtra("name")), "Incomplete");
+                    Tab1.myDB.updateDone(intent.getStringExtra("name"), false);
+                    Tab1.huntsAdapter.notifyDataSetChanged();
+
                     finish();
                 }
             }

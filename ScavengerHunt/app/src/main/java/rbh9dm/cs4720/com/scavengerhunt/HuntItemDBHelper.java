@@ -187,4 +187,5 @@ public class HuntItemDBHelper extends SQLiteOpenHelper {
 
         return array_list;
     }
+
 }

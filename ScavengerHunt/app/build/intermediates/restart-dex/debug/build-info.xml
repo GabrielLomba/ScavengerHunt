@@ -4,34 +4,31 @@
     api-level="22"
     density="tvdpi"
     format="7"
-    timestamp="739297923982760"
-    verifier="CLASS_ADDED" >
+    timestamp="927714458669362" >
 
     <task
         name="javac"
-        duration="2123" />
+        duration="1453" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="92" />
+        duration="93" />
     <task
         name="verifier"
-        duration="31" />
+        duration="18" />
 
     <artifact
         location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
         type="DEX" />
 
-    <build timestamp="734632897445536" >
+    <build timestamp="924459748362298" >
         <artifact
             location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
-    <build
-        timestamp="739297923982760"
-        verifier="CLASS_ADDED" >
+    <build timestamp="927714458669362" >
         <artifact
             location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
             type="DEX" />

@@ -4,29 +4,34 @@
     api-level="22"
     density="tvdpi"
     format="7"
-    timestamp="1147770695364827" >
+    timestamp="1149035541639831" >
 
     <task
         name="javac"
-        duration="2581" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1626" />
+        duration="0" />
     <task
         name="verifier"
-        duration="627" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
 
-    <build timestamp="1147770695364827" >
+    <build timestamp="1148797515607239" >
         <artifact
             location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="1149035541639831" >
+        <artifact
+            location="C:\Users\Student User\Documents\GitHub\scavhunt2\ScavengerHunt\ScavengerHunt\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

@@ -39,8 +39,8 @@
       <file leaf-file-name="content_add__hunt__item.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add__hunt__item.xml">
           <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+            <state vertical-scroll-proportion="-13.346154">
+              <caret line="78" column="42" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -1615,7 +1615,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/rbh9dm/cs4720/com/scavengerhunt/ScavengerHuntDBHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_more_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/rbh9dm/cs4720/com/scavengerhunt/Add_Hunt_Item.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add__hunt__item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
         <option value="$PROJECT_DIR$/app/src/main/java/rbh9dm/cs4720/com/scavengerhunt/HuntItems.java" />
@@ -1629,6 +1628,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/rbh9dm/cs4720/com/scavengerhunt/EditItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/rbh9dm/cs4720/com/scavengerhunt/DataLongOperationAsynchTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/rbh9dm/cs4720/com/scavengerhunt/HuntDownload.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add__hunt__item.xml" />
       </list>
     </option>
   </component>
@@ -1978,7 +1978,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1377" height="735" extended-state="0" />
+    <frame x="-7" y="0" width="1377" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2447,8 +2447,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add__hunt__item.xml">
       <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state vertical-scroll-proportion="-13.346154">
+          <caret line="78" column="42" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
           <folding />
         </state>
       </provider>

@@ -71,6 +71,7 @@ public class AddScavengerHunt extends AppCompatActivity {
                     else {
                         Tab1.myDB.insertHunt(name, false);
                         Tab1.huntList.add(name);
+                        Tab1.huntDoneList.add("Incomplete");
                         Tab1.huntsAdapter.notifyDataSetChanged();
                     }
                     finish();

@@ -30,6 +30,7 @@ public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[
             Log.d("response", params[0] +" ");
             return new String[]{response};
         } catch (Exception e) {
+            Log.d("On", "Background");
             return null;
         }
     }
@@ -45,9 +46,9 @@ public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[
                 JSONObject jsonObject = jsonResult.getJSONObject(j);
                 String address;
                 JSONArray addresses = jsonObject.getJSONArray("address_components");
-                String output = (addresses.getJSONObject(0).getJSONArray("types").getString(0).substring(0, 1).toUpperCase()
-                        + addresses.getJSONObject(0).getJSONArray("types").getString(0).substring(1)).replaceAll("_", " ");
-                address = output +": " +addresses.getJSONObject(0).getString("long_name");
+                //String output = (addresses.getJSONObject(0).getJSONArray("types").getString(0).substring(0, 1).toUpperCase()
+                 //       + addresses.getJSONObject(0).getJSONArray("types").getString(0).substring(1)).replaceAll("_", " ");
+                address = addresses.getJSONObject(0).getString("long_name");
                 for(int i = 0; i < addresses.length(); i++) {
                     if(addresses.getJSONObject(i).getJSONArray("types").getString(0).equals("administrative_area_level_1"))
                         address += ", " +addresses.getJSONObject(i).getString("long_name");
@@ -74,6 +75,14 @@ public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[
                 Add_Hunt_Item.itemAdapter.notifyDataSetChanged();
 
         } catch (JSONException e) {
+            CharSequence text = "Wi-Fi off";
+            Add_Hunt_Item.itemList.clear();
+            Add_Hunt_Item.itemAdapter.notifyDataSetChanged();
+            Add_Hunt_Item.coordinates.clear();
+            int duration = Toast.LENGTH_LONG;
+
+            Toast toast = Toast.makeText(this.context, text, duration);
+            //toast.show();
             e.printStackTrace();
         }
 
@@ -106,6 +115,7 @@ public class DataLongOperationAsynchTask extends AsyncTask<String, Void, String[
             }
 
         } catch (Exception e) {
+            Log.d("On", "LatLongURL");
             e.printStackTrace();
         }
         return response;

@@ -21,7 +21,7 @@ public class EditItem extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Edit Hunt Item");
+        getSupportActionBar().setTitle("Edit Task");
 
         final Intent intent = getIntent();
         pos = intent.getIntExtra("position", 0);

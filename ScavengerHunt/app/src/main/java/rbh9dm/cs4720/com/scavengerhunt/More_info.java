@@ -54,6 +54,9 @@ public class More_info extends AppCompatActivity {
     LocationListener locationListener;
 
     private ImageView iv;
+    private final int MY_PERMISSIONS_REQUEST_READ_LOCATION = 0;
+    private final int MY_PERMISSIONS_REQUEST_READ__CAMERA = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,6 +149,7 @@ public class More_info extends AppCompatActivity {
                 // Adjust hunt item in list
                 HuntItems.itemList.get(pos).setComplete(isChecked);
                 HuntItems.itemAdapter.notifyDataSetChanged();
+                Log.i("heyo", "heyooooooooooooooooooo");
 
                 // Update Task DB
                 Tab1.myHuntDB.updateComplete(nameOfHunt, HuntItems.itemList.get(pos).getName(), isChecked);
@@ -186,39 +190,7 @@ public class More_info extends AppCompatActivity {
 
         locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
-                // Called when a new location is found by the network location provider.
-
-                // Find current location
-                currLat = location.getLatitude();
-                currLon = location.getLongitude();
-
-                // Get distance from goal
-                float[] dist = new float[3];
-                Location.distanceBetween(lat, lon, currLat, currLon, dist);
-                float distance = dist[0];
-
-                // Display Distance
-                TextView distText = (TextView) findViewById(R.id.distance);
-                distText.setText("Distance: "+distance+" meters");
-
-                // Adjust if appropriate
-                if (distance < 10000 && !locOk) {
-                    TextView Mloc = (TextView) findViewById(R.id.Mlocation);
-                    Mloc.setTextColor(Color.parseColor("#00ff00"));
-                    locOk = true;
-
-                    // Adjust hunt item in list
-                    HuntItems.itemList.get(pos).setLocationOk(true);
-                    HuntItems.itemAdapter.notifyDataSetChanged();
-
-                    // Update DB
-                    Tab1.myHuntDB.updateLocOk(nameOfHunt, HuntItems.itemList.get(pos).getName(), true);
-
-                    // Enable check box?
-                    if (!(picReq && !picOk))
-                        chk.setEnabled(true);
-                }
-
+                updateLocation(location);
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {}
@@ -228,12 +200,12 @@ public class More_info extends AppCompatActivity {
             public void onProviderDisabled(String provider) {}
         };
 
-        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            TextView distText = (TextView) findViewById(R.id.distance);
-            distText.setText("Distance: GPS not enabled");
+        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_LOCATION);
         }
         else {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            updateLocation(locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER));
         }
 
         /************** Is picture required? Is it ok? ************/
@@ -252,6 +224,11 @@ public class More_info extends AppCompatActivity {
         if (bp != null)
             iv.setImageBitmap(bp);
 
+        /** Location permissions
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_LOCATION);
+        */
 
         /**************** Set up camera button *************/
         Button camera = (Button) this.findViewById(R.id.camera);
@@ -259,12 +236,9 @@ public class More_info extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please enable the camera.";
-                    int duration = Toast.LENGTH_LONG;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    ActivityCompat.requestPermissions(More_info.this,
+                            new String[]{Manifest.permission.CAMERA},
+                            MY_PERMISSIONS_REQUEST_READ__CAMERA);
                 }
                 else {
                     // create Intent to take a picture and return control to the
@@ -277,6 +251,8 @@ public class More_info extends AppCompatActivity {
 
             }
         });
+
+
 
         /************* Set up edit button ***************/
         Button editTask = (Button) findViewById(R.id.editTask);
@@ -326,4 +302,70 @@ public class More_info extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ__CAMERA: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                    // start the image capture Intent
+                    startActivityForResult(intent, 0);
+
+                }
+                return;
+            }
+            case MY_PERMISSIONS_REQUEST_READ_LOCATION: {
+                if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+                    updateLocation(locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER));
+                }
+                else {
+                    TextView distText = (TextView) findViewById(R.id.distance);
+                    distText.setText("Distance: GPS not enabled");
+                }
+            }
+        }
+    }
+
+    private void updateLocation(Location location) {
+        if(location != null) {
+            // Called when a new location is found by the network location provider.
+            // Find current location
+            currLat = location.getLatitude();
+            currLon = location.getLongitude();
+
+            // Get distance from goal
+            float[] dist = new float[3];
+            Location.distanceBetween(lat, lon, currLat, currLon, dist);
+            float distance = dist[0];
+
+            // Display Distance
+            TextView distText = (TextView) findViewById(R.id.distance);
+            distText.setText("Distance: " + distance + " meters");
+
+            // Adjust if appropriate
+            if (distance < 10000 && !locOk) {
+                TextView Mloc = (TextView) findViewById(R.id.Mlocation);
+                Mloc.setTextColor(Color.parseColor("#00ff00"));
+                locOk = true;
+
+                // Adjust hunt item in list
+                HuntItems.itemList.get(pos).setLocationOk(true);
+                HuntItems.itemAdapter.notifyDataSetChanged();
+
+                // Update DB
+                Tab1.myHuntDB.updateLocOk(nameOfHunt, HuntItems.itemList.get(pos).getName(), true);
+
+                // Enable check box?
+                if (!(picReq && !picOk))
+                    chk.setEnabled(true);
+            }
+        }
+    }
+
 }

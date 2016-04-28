@@ -54,7 +54,8 @@ public class Add_Hunt_Item extends AppCompatActivity {
                 nameOfLocation = itemList.get(position);
                 latitude = coordinates.get(position).latitude;
                 longitude = coordinates.get(position).longitude;
-
+                EditText locationField = (EditText) findViewById(R.id.searchLoc);
+                locationField.setText(Add_Hunt_Item.this.itemList.get(position));
                 Context context = getApplicationContext();
                 CharSequence text = "You selected " + Add_Hunt_Item.this.itemList.get(position);
                 int duration = Toast.LENGTH_LONG;

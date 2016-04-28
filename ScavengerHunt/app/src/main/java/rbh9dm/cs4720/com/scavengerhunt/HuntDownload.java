@@ -22,6 +22,7 @@ public class HuntDownload extends AppCompatActivity {
     public static ArrayList<LineItem> itemList = new ArrayList<>();
     public static ArrayAdapter<LineItem> itemAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +35,42 @@ public class HuntDownload extends AppCompatActivity {
         String title = intent.getStringExtra(Tab2.TITLE);
         getSupportActionBar().setTitle(title);
 
-        /*** Firebase ***/
         Firebase.setAndroidContext(this);
+
+
+        /** Testing connection **/
+        Firebase connectedRef = new Firebase("https://cs4720scavhunt.firebaseio.com/.info/connected");
+        connectedRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                boolean connected = snapshot.getValue(Boolean.class);
+                Button download = (Button) findViewById(R.id.download);
+                if (!connected) {
+                    download.setEnabled(false);
+                    Context context = getApplicationContext();
+                    CharSequence text = "Wi-Fi off";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    //toast.show();
+                }
+                else
+                    download.setEnabled(true);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError error) {
+                System.err.println("Listener was cancelled");
+            }
+        });
+
+        /*** Firebase ***/
+
         Firebase ref = new Firebase("https://cs4720scavhunt.firebaseio.com/");
 
         /*** Load all items from Firebase ***/
         itemList.clear();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 snapshot = snapshot.child("hunts");
@@ -93,7 +123,12 @@ public class HuntDownload extends AppCompatActivity {
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
+                Context context = getApplicationContext();
+                CharSequence text = "Wi-Fi off";
+                int duration = Toast.LENGTH_SHORT;
 
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
 
@@ -102,31 +137,31 @@ public class HuntDownload extends AppCompatActivity {
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                String selected = intent.getStringExtra(Tab2.TITLE);
+                    Intent intent = getIntent();
+                    String selected = intent.getStringExtra(Tab2.TITLE);
 
-                /** find a unique name for the hunt **/
-                if (Tab1.myDB.exists(selected)) {
-                    Integer i = 1;
-                    while (Tab1.myDB.exists(selected + "(" + i.toString() + ")")) {
-                        i++;
+                    /** find a unique name for the hunt **/
+                    if (Tab1.myDB.exists(selected)) {
+                        Integer i = 1;
+                        while (Tab1.myDB.exists(selected + "(" + i.toString() + ")")) {
+                            i++;
+                        }
+                        selected += "(" + i + ")";
                     }
-                    selected += "(" + i + ")";
-                }
-                for (LineItem task : itemList) {
-                    Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired(), false, false, task.getNameOfLocation(), task.getLatitude(), task.getLongitude(), false);
-                }
-                Tab1.myDB.insertHunt(selected, false);
-                Tab1.huntList.add(selected);
-                Tab1.huntDoneList.add("Incomplete");
-                Tab1.huntsAdapter.notifyDataSetChanged();
+                    for (LineItem task : itemList) {
+                        Tab1.myHuntDB.insertHunt(selected, task.getName(), task.getDescription(), task.isPictureRequired(), task.isLocationRequired(), false, false, task.getNameOfLocation(), task.getLatitude(), task.getLongitude(), false);
+                    }
+                    Tab1.myDB.insertHunt(selected, false);
+                    Tab1.huntList.add(selected);
+                    Tab1.huntDoneList.add("Incomplete");
+                    Tab1.huntsAdapter.notifyDataSetChanged();
 
-                Context context = getApplicationContext();
-                CharSequence text = "Scavenger Hunt " + selected + " downloaded!";
-                int duration = Toast.LENGTH_SHORT;
+                    Context context = getApplicationContext();
+                    CharSequence text = "Scavenger Hunt " + selected + " downloaded!";
+                    int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
             }
         });
     }

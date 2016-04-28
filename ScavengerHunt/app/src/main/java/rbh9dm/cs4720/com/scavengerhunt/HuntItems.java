@@ -93,8 +93,36 @@ public class HuntItems extends AppCompatActivity {
                 startActivity(intent);
             }});
 
+
         /*** Share button ***/
-        Button share = (Button) findViewById(R.id.share);
+        final Button share = (Button) findViewById(R.id.share);
+
+        Firebase connectedRef = new Firebase("https://cs4720scavhunt.firebaseio.com/.info/connected");
+        connectedRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                boolean connected = snapshot.getValue(Boolean.class);
+                Button download = (Button) findViewById(R.id.download);
+                if (!connected) {
+                    share.setEnabled(false);
+                    Context context = getApplicationContext();
+                    CharSequence text = "Wi-Fi off";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else
+                    share.setEnabled(true);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError error) {
+                System.err.println("Listener was cancelled");
+            }
+        });
+
+
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

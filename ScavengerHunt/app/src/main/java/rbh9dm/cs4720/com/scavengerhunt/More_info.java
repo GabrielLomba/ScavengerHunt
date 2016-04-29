@@ -66,8 +66,6 @@ public class More_info extends AppCompatActivity {
         Intent intent = getIntent();
         pos = intent.getIntExtra(HuntItems.POSITION, 0);
         nameOfHunt = intent.getStringExtra("nameOfHunt");
-
-
     }
 
     @Override
@@ -117,190 +115,196 @@ public class More_info extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(HuntItems.itemList.get(pos).getName());
-
-        /************ Set description text ****************/
-        TextView description = (TextView) findViewById(R.id.Mdescription);
-        description.setText(HuntItems.itemList.get(pos).getDescription());
-
-        /*********** What is required? What is ok? ******************/
-        locReq = HuntItems.itemList.get(pos).isLocationRequired();
-        locOk = HuntItems.itemList.get(pos).isLocationOk();
-        picReq = HuntItems.itemList.get(pos).isPictureRequired();
-        picOk = HuntItems.itemList.get(pos).isPictureOk();
-
-        /*********** Is the task complete? ****************/
-        taskDone = HuntItems.itemList.get(pos).isComplete();
-        chk = (CheckBox) findViewById(R.id.complete);
-        if ((locReq && !locOk) || (picReq && !picOk))
-            chk.setEnabled(false);
-        else if (taskDone) {
-            chk.setChecked(true);
-        }
-        chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                // Adjust hunt item in list
-                HuntItems.itemList.get(pos).setComplete(isChecked);
-                HuntItems.itemAdapter.notifyDataSetChanged();
-                Log.i("heyo", "heyooooooooooooooooooo");
-
-                // Update Task DB
-                Tab1.myHuntDB.updateComplete(nameOfHunt, HuntItems.itemList.get(pos).getName(), isChecked);
-
-                // Update Hunt and Hunt DB
-                boolean allDone = true;
-                int n = HuntItems.itemList.size();
-                for (int i = 0; i < n; i++) {
-                    if(!HuntItems.itemList.get(i).isComplete()) {
-                        allDone = false;
-                    }
-                }
-                Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), allDone ? "Complete" : "Incomplete");
-                Tab1.myDB.updateDone(nameOfHunt, allDone);
-                Tab1.huntsAdapter.notifyDataSetChanged();
-            }
-        });
-
-        /************* Is location required? Is it ok? **************/
-        TextView Mloc = (TextView) findViewById(R.id.Mlocation);
-
-        if (locReq)
-            Mloc.setText("Location: Required");
-        if (locOk)
-            Mloc.setTextColor(Color.parseColor("#00ff00"));
-
-        /************** Set Destination ******************/
-        TextView dest = (TextView) findViewById(R.id.dest);
-        dest.setText("Destination: " + HuntItems.itemList.get(pos).getNameOfLocation());
-
-
-        /*********** Set lat/long of destination **************/
-        lat = HuntItems.itemList.get(pos).getLatitude();
-        lon = HuntItems.itemList.get(pos).getLongitude();
-
-        /************* Set up location listener ***************/
-        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-
-        locationListener = new LocationListener() {
-            public void onLocationChanged(Location location) {
-                updateLocation(location);
-            }
-
-            public void onStatusChanged(String provider, int status, Bundle extras) {}
-
-            public void onProviderEnabled(String provider) {}
-
-            public void onProviderDisabled(String provider) {}
-        };
-
-        if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_LOCATION);
+        if (HuntItems.itemList.size() == 0) {
+            finish();
         }
         else {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-            updateLocation(locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER));
-        }
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle(HuntItems.itemList.get(pos).getName());
 
-        /************** Is picture required? Is it ok? ************/
-        TextView Mpic = (TextView) findViewById(R.id.Mpic);
+            /************ Set description text ****************/
+            TextView description = (TextView) findViewById(R.id.Mdescription);
+            description.setText(HuntItems.itemList.get(pos).getDescription());
 
-        picReq = HuntItems.itemList.get(pos).isPictureRequired();
-        if (picReq)
-            Mpic.setText("Picture: Required");
-        picOk = HuntItems.itemList.get(pos).isPictureOk();
-        if (picOk)
-            Mpic.setTextColor(Color.parseColor("#00ff00"));
+            /*********** What is required? What is ok? ******************/
+            locReq = HuntItems.itemList.get(pos).isLocationRequired();
+            locOk = HuntItems.itemList.get(pos).isLocationOk();
+            picReq = HuntItems.itemList.get(pos).isPictureRequired();
+            picOk = HuntItems.itemList.get(pos).isPictureOk();
 
-        /************** Retrieve picture **********************/
-        iv = (ImageView) findViewById(R.id.iv);
-        Bitmap bp = Tab1.myImgDB.getImage(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName());
-        if (bp != null)
-            iv.setImageBitmap(bp);
-
-        /** Location permissions
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_LOCATION);
-        */
-
-        /**************** Set up camera button *************/
-        Button camera = (Button) this.findViewById(R.id.camera);
-        camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(More_info.this,
-                            new String[]{Manifest.permission.CAMERA},
-                            MY_PERMISSIONS_REQUEST_READ__CAMERA);
-                }
-                else {
-                    // create Intent to take a picture and return control to the
-                    // calling application Intent
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-                    // start the image capture Intent
-                    startActivityForResult(intent, 0);
-                }
-
+            /*********** Is the task complete? ****************/
+            taskDone = HuntItems.itemList.get(pos).isComplete();
+            chk = (CheckBox) findViewById(R.id.complete);
+            if ((locReq && !locOk) || (picReq && !picOk))
+                chk.setEnabled(false);
+            else if (taskDone) {
+                chk.setChecked(true);
             }
-        });
+            chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    // Adjust hunt item in list
+                    HuntItems.itemList.get(pos).setComplete(isChecked);
+                    HuntItems.itemAdapter.notifyDataSetChanged();
+                    Log.i("heyo", "heyooooooooooooooooooo");
 
+                    // Update Task DB
+                    Tab1.myHuntDB.updateComplete(nameOfHunt, HuntItems.itemList.get(pos).getName(), isChecked);
 
-        /************* Set up edit button ***************/
-        Button editTask = (Button) findViewById(R.id.editTask);
-        editTask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(More_info.this, EditItem.class);
-                intent.putExtra("position", pos);
-                intent.putExtra("nameOfHunt", nameOfHunt);
-                startActivity(intent);
-            }
-        });
-
-        /************* Set up delete button ***************/
-        Button deleteTask = (Button) findViewById(R.id.deleteTask);
-        deleteTask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Tab1.myHuntDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
-                Tab1.myImgDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
-
-                boolean mayHaveChanged = !HuntItems.itemList.get(pos).isComplete() || HuntItems.itemList.size() == 1;
-
-                HuntItems.itemList.remove(pos);
-
-                if (mayHaveChanged) {
-                    boolean allDone = HuntItems.itemList.size() > 0;
+                    // Update Hunt and Hunt DB
+                    boolean allDone = true;
                     int n = HuntItems.itemList.size();
-                    for(int i = 0; i < n; i++) {
-                        if ( !HuntItems.itemList.get(i).isComplete() ) { allDone = false; }
+                    for (int i = 0; i < n; i++) {
+                        if (!HuntItems.itemList.get(i).isComplete()) {
+                            allDone = false;
+                        }
                     }
-                    if (allDone ) {
-                        Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), "Complete");
-                        Tab1.myDB.updateDone(nameOfHunt, allDone);
-                        Tab1.huntsAdapter.notifyDataSetChanged();
-                    }
-                    else if (HuntItems.itemList.size() == 0) {
-                        Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), "Incomplete");
-                        Tab1.myDB.updateDone(nameOfHunt, allDone);
-                        Tab1.huntsAdapter.notifyDataSetChanged();
-                    }
+                    Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), allDone ? "Complete" : "Incomplete");
+                    Tab1.myDB.updateDone(nameOfHunt, allDone);
+                    Tab1.huntsAdapter.notifyDataSetChanged();
+                }
+            });
+
+            /************* Is location required? Is it ok? **************/
+            TextView Mloc = (TextView) findViewById(R.id.Mlocation);
+
+            if (locReq)
+                Mloc.setText("Location: Required");
+            if (locOk)
+                Mloc.setTextColor(Color.parseColor("#00ff00"));
+
+            /************** Set Destination ******************/
+            TextView dest = (TextView) findViewById(R.id.dest);
+            dest.setText("Destination: " + HuntItems.itemList.get(pos).getNameOfLocation());
+
+
+            /*********** Set lat/long of destination **************/
+            lat = HuntItems.itemList.get(pos).getLatitude();
+            lon = HuntItems.itemList.get(pos).getLongitude();
+
+            /************* Set up location listener ***************/
+            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+            locationListener = new LocationListener() {
+                public void onLocationChanged(Location location) {
+                    updateLocation(location);
                 }
 
-                HuntItems.itemAdapter.notifyDataSetChanged();
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+                }
 
-                finish();
+                public void onProviderEnabled(String provider) {
+                }
+
+                public void onProviderDisabled(String provider) {
+                }
+            };
+
+            if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_LOCATION);
+            } else {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+                updateLocation(locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER));
             }
-        });
+
+            /************** Is picture required? Is it ok? ************/
+            TextView Mpic = (TextView) findViewById(R.id.Mpic);
+
+            picReq = HuntItems.itemList.get(pos).isPictureRequired();
+            if (picReq)
+                Mpic.setText("Picture: Required");
+            picOk = HuntItems.itemList.get(pos).isPictureOk();
+            if (picOk)
+                Mpic.setTextColor(Color.parseColor("#00ff00"));
+
+            /************** Retrieve picture **********************/
+            iv = (ImageView) findViewById(R.id.iv);
+            Bitmap bp = Tab1.myImgDB.getImage(More_info.this.nameOfHunt, HuntItems.itemList.get(pos).getName());
+            if (bp != null)
+                iv.setImageBitmap(bp);
+
+            /** Location permissions
+
+             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_LOCATION);
+             */
+
+            /**************** Set up camera button *************/
+            Button camera = (Button) this.findViewById(R.id.camera);
+            camera.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (ActivityCompat.checkSelfPermission(More_info.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(More_info.this,
+                                new String[]{Manifest.permission.CAMERA},
+                                MY_PERMISSIONS_REQUEST_READ__CAMERA);
+                    } else {
+                        // create Intent to take a picture and return control to the
+                        // calling application Intent
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                        // start the image capture Intent
+                        startActivityForResult(intent, 0);
+                    }
+
+                }
+            });
+
+
+            /************* Set up edit button ***************/
+            Button editTask = (Button) findViewById(R.id.editTask);
+            editTask.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(More_info.this, EditItem.class);
+                    intent.putExtra("position", pos);
+                    intent.putExtra("nameOfHunt", nameOfHunt);
+                    startActivity(intent);
+                }
+            });
+
+            /************* Set up delete button ***************/
+            Button deleteTask = (Button) findViewById(R.id.deleteTask);
+            deleteTask.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Tab1.myHuntDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
+                    Tab1.myImgDB.deleteHunt(nameOfHunt, HuntItems.itemList.get(pos).getName());
+
+                    boolean mayHaveChanged = !HuntItems.itemList.get(pos).isComplete() || HuntItems.itemList.size() == 1;
+
+                    HuntItems.itemList.remove(pos);
+
+                    if (mayHaveChanged) {
+                        boolean allDone = HuntItems.itemList.size() > 0;
+                        int n = HuntItems.itemList.size();
+                        for (int i = 0; i < n; i++) {
+                            if (!HuntItems.itemList.get(i).isComplete()) {
+                                allDone = false;
+                            }
+                        }
+                        if (allDone) {
+                            Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), "Complete");
+                            Tab1.myDB.updateDone(nameOfHunt, allDone);
+                            Tab1.huntsAdapter.notifyDataSetChanged();
+                        } else if (HuntItems.itemList.size() == 0) {
+                            Tab1.huntDoneList.set(Tab1.huntList.indexOf(nameOfHunt), "Incomplete");
+                            Tab1.myDB.updateDone(nameOfHunt, allDone);
+                            Tab1.huntsAdapter.notifyDataSetChanged();
+                        }
+                    }
+
+                    HuntItems.itemAdapter.notifyDataSetChanged();
+
+                    finish();
+                }
+            });
+        }
     }
 
     @Override
